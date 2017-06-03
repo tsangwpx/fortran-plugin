@@ -45,14 +45,20 @@ FILE
           PsiWhiteSpace('     ')
           ASSIGNMENT_STMT
             DESIGNATOR
-              PsiElement(identifier)('x')
+              DATA_REFERENCE
+                DATA_REFERENCE_PART
+                  PsiElement(identifier)('x')
             PsiElement(=)('=')
             ADD_EXPR
               DESIGNATOR
-                PsiElement(identifier)('y')
+                DATA_REFERENCE
+                  DATA_REFERENCE_PART
+                    PsiElement(identifier)('y')
               PsiElement(+)('+')
               DESIGNATOR
-                PsiElement(identifier)('z')
+                DATA_REFERENCE
+                  DATA_REFERENCE_PART
+                    PsiElement(identifier)('z')
           PsiElement(eol)('\n')
         INTERNAL_SUBPROGRAM_PART
           CONTAINS_STMT
@@ -70,33 +76,35 @@ FILE
                 PREFIX_SPEC
                   INTRINSIC_TYPE_SPEC
                     PsiElement(keyword)('real')
-              PsiWhiteSpace(' ')
-              PsiElement(keyword)('function')
-              PsiWhiteSpace(' ')
-              PsiElement(identifier)('b')
-              PsiElement(()('(')
-              PsiElement(identifier)('z')
-              PsiElement())(')')
-            PsiElement(eol)('\n')
-            BLOCK
-              LABEL
-                PsiElement(integerliteral)('8')
-              PsiWhiteSpace('       ')
-              RETURN_STMT
-                PsiElement(keyword)('return')
                 PsiWhiteSpace(' ')
-                MULT_EXPR
-                  DESIGNATOR
-                    PsiElement(identifier)('z')
-                  PsiElement(*)('*')
-                  CONSTANT
-                    PsiElement(integerliteral)('2')
-              PsiElement(eol)('\n')
-            END_FUNCTION_STMT
-              LABEL
-                PsiElement(integerliteral)('9')
-              PsiWhiteSpace('     ')
-              PsiElement(keyword)('endfunction')
+                PsiElement(keyword)('function')
+                PsiWhiteSpace(' ')
+                PsiElement(identifier)('b')
+                PsiElement(()('(')
+                PsiElement(identifier)('z')
+                PsiElement())(')')
+                PsiElement(eol)('\n')
+              BLOCK
+                LABEL
+                  PsiElement(integerliteral)('8')
+                PsiWhiteSpace('       ')
+                RETURN_STMT
+                  PsiElement(keyword)('return')
+                  PsiWhiteSpace(' ')
+                  MULT_EXPR
+                    DESIGNATOR
+                      DATA_REFERENCE
+                        DATA_REFERENCE_PART
+                          PsiElement(identifier)('z')
+                    PsiElement(*)('*')
+                    CONSTANT
+                      PsiElement(integerliteral)('2')
+                PsiElement(eol)('\n')
+              END_FUNCTION_STMT
+                LABEL
+                  PsiElement(integerliteral)('9')
+                PsiWhiteSpace('     ')
+                PsiElement(keyword)('endfunction')
           PsiElement(eol)('\n')
         END_MP_SUBPROGRAM_STMT
           LABEL
