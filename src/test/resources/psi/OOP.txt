@@ -211,11 +211,11 @@ FILE
             PsiElement(keyword)('call')
             PsiWhiteSpace(' ')
             PROCEDURE_DESIGNATOR
-              DATA_REFERENCE
-                DATA_REFERENCE_PART
+              DATA_PATH
+                FortranDataReferenceElementImpl(PATH)
                   PsiElement(identifier)('t1')
                 PsiElement(%)('%')
-                DATA_REFERENCE_PART
+                FortranDataReferenceElementImpl(PATH)
                   PsiElement(identifier)('sub')
                   PsiElement(()('(')
                   PsiElement())(')')
@@ -225,14 +225,14 @@ FILE
             PsiElement(keyword)('return')
             PsiWhiteSpace(' ')
             DESIGNATOR
-              DATA_REFERENCE
-                DATA_REFERENCE_PART
+              DATA_PATH
+                FortranDataReferenceElementImpl(PATH)
                   PsiElement(identifier)('o')
                 PsiElement(%)('%')
-                DATA_REFERENCE_PART
+                FortranDataReferenceElementImpl(PATH)
                   PsiElement(identifier)('ar')
                 PsiElement(%)('%')
-                DATA_REFERENCE_PART
+                FortranDataReferenceElementImpl(PATH)
                   PsiElement(identifier)('dat')
                   PsiElement(()('(')
                   SECTION_SUBSCRIPT
@@ -240,10 +240,10 @@ FILE
                       PsiElement(integerliteral)('5')
                   PsiElement())(')')
                 PsiElement(%)('%')
-                DATA_REFERENCE_PART
+                FortranDataReferenceElementImpl(PATH)
                   PsiElement(identifier)('b')
                 PsiElement(%)('%')
-                DATA_REFERENCE_PART
+                FortranDataReferenceElementImpl(PATH)
                   PsiElement(identifier)('x')
           PsiElement(eol)('\n')
         PsiWhiteSpace('  ')

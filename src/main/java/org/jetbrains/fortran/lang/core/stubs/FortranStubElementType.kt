@@ -9,7 +9,7 @@ import org.jetbrains.fortran.lang.psi.FortranCompositeElement
 
 abstract class FortranStubElementType<StubT : StubElement<*>, PsiT : FortranCompositeElement>(
     debugName: String
-) : IStubElementType<StubT, PsiT>(debugName, FortranLanguage.INSTANCE) {
+) : IStubElementType<StubT, PsiT>(debugName, FortranLanguage) {
 
     final override fun getExternalId(): String = "fortran.${super.toString()}"
 

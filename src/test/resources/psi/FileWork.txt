@@ -104,8 +104,8 @@ FILE
           PsiElement(=)('=')
           PsiWhiteSpace(' ')
           DESIGNATOR
-            DATA_REFERENCE
-              DATA_REFERENCE_PART
+            DATA_PATH
+              FortranDataReferenceElementImpl(PATH)
                 PsiElement(identifier)('aaa')
         PsiElement(,)(',')
         PsiWhiteSpace(' ')
@@ -115,8 +115,8 @@ FILE
           PsiElement(=)('=')
           PsiWhiteSpace(' ')
           DESIGNATOR
-            DATA_REFERENCE
-              DATA_REFERENCE_PART
+            DATA_PATH
+              FortranDataReferenceElementImpl(PATH)
                 PsiElement(identifier)('bbb')
         PsiElement())(')')
       PsiElement(eol)('\n')
@@ -169,8 +169,8 @@ FILE
           PsiElement(=)('=')
           PsiWhiteSpace(' ')
           DESIGNATOR
-            DATA_REFERENCE
-              DATA_REFERENCE_PART
+            DATA_PATH
+              FortranDataReferenceElementImpl(PATH)
                 PsiElement(identifier)('ccc')
         PsiElement())(')')
       PsiElement(eol)('\n')
@@ -253,8 +253,8 @@ FILE
           PsiElement(=)('=')
           PsiWhiteSpace(' ')
           DESIGNATOR
-            DATA_REFERENCE
-              DATA_REFERENCE_PART
+            DATA_PATH
+              FortranDataReferenceElementImpl(PATH)
                 PsiElement(identifier)('f')
         PsiElement(,)(',')
         PsiWhiteSpace(' ')
@@ -262,8 +262,8 @@ FILE
           PsiElement(identifier)('nextrec')
           PsiElement(=)('=')
           DESIGNATOR
-            DATA_REFERENCE
-              DATA_REFERENCE_PART
+            DATA_PATH
+              FortranDataReferenceElementImpl(PATH)
                 PsiElement(identifier)('nnn')
         PsiElement(,)(',')
         PsiWhiteSpace(' ')
@@ -271,8 +271,8 @@ FILE
           PsiElement(identifier)('readwrite')
           PsiElement(=)('=')
           DESIGNATOR
-            DATA_REFERENCE
-              DATA_REFERENCE_PART
+            DATA_PATH
+              FortranDataReferenceElementImpl(PATH)
                 PsiElement(identifier)('l')
         PsiElement())(')')
       PsiElement(eol)('\n')
@@ -292,8 +292,8 @@ FILE
           PsiElement(=)('=')
           PsiWhiteSpace(' ')
           DESIGNATOR
-            DATA_REFERENCE
-              DATA_REFERENCE_PART
+            DATA_PATH
+              FortranDataReferenceElementImpl(PATH)
                 PsiElement(identifier)('i')
         PsiElement(,)(',')
         PsiWhiteSpace(' ')

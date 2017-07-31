@@ -62,23 +62,23 @@ FILE
         BLOCK
           ASSIGNMENT_STMT
             DESIGNATOR
-              DATA_REFERENCE
-                DATA_REFERENCE_PART
+              DATA_PATH
+                FortranDataReferenceElementImpl(PATH)
                   PsiElement(identifier)('x')
             PsiWhiteSpace(' ')
             PsiElement(=)('=')
             PsiWhiteSpace(' ')
             ADD_EXPR
               DESIGNATOR
-                DATA_REFERENCE
-                  DATA_REFERENCE_PART
+                DATA_PATH
+                  FortranDataReferenceElementImpl(PATH)
                     PsiElement(identifier)('y')
               PsiWhiteSpace(' ')
               PsiElement(+)('+')
               PsiWhiteSpace(' ')
               DESIGNATOR
-                DATA_REFERENCE
-                  DATA_REFERENCE_PART
+                DATA_PATH
+                  FortranDataReferenceElementImpl(PATH)
                     PsiElement(identifier)('z')
           PsiElement(eol)('\n')
         PsiWhiteSpace('   ')
@@ -117,8 +117,8 @@ FILE
     BLOCK
       ASSIGNMENT_STMT
         DESIGNATOR
-          DATA_REFERENCE
-            DATA_REFERENCE_PART
+          DATA_PATH
+            FortranDataReferenceElementImpl(PATH)
               PsiElement(identifier)('sum')
         PsiWhiteSpace(' ')
         PsiElement(=)('=')
@@ -126,37 +126,37 @@ FILE
         ADD_EXPR
           ADD_EXPR
             DESIGNATOR
-              DATA_REFERENCE
-                DATA_REFERENCE_PART
+              DATA_PATH
+                FortranDataReferenceElementImpl(PATH)
                   PsiElement(identifier)('x')
             PsiWhiteSpace(' ')
             PsiElement(+)('+')
             PsiWhiteSpace(' ')
             DESIGNATOR
-              DATA_REFERENCE
-                DATA_REFERENCE_PART
+              DATA_PATH
+                FortranDataReferenceElementImpl(PATH)
                   PsiElement(identifier)('y')
           PsiWhiteSpace(' ')
           PsiElement(+)('+')
           PsiWhiteSpace(' ')
           DESIGNATOR
-            DATA_REFERENCE
-              DATA_REFERENCE_PART
+            DATA_PATH
+              FortranDataReferenceElementImpl(PATH)
                 PsiElement(identifier)('z')
       PsiElement(eol)('\n')
       PsiWhiteSpace('    ')
       ASSIGNMENT_STMT
         DESIGNATOR
-          DATA_REFERENCE
-            DATA_REFERENCE_PART
+          DATA_PATH
+            FortranDataReferenceElementImpl(PATH)
               PsiElement(identifier)('average')
         PsiWhiteSpace(' ')
         PsiElement(=)('=')
         PsiWhiteSpace(' ')
         MULT_EXPR
           DESIGNATOR
-            DATA_REFERENCE
-              DATA_REFERENCE_PART
+            DATA_PATH
+              FortranDataReferenceElementImpl(PATH)
                 PsiElement(identifier)('sum')
           PsiWhiteSpace(' ')
           PsiElement(/)('/')
@@ -202,8 +202,8 @@ FILE
     BLOCK
       ASSIGNMENT_STMT
         DESIGNATOR
-          DATA_REFERENCE
-            DATA_REFERENCE_PART
+          DATA_PATH
+            FortranDataReferenceElementImpl(PATH)
               PsiElement(identifier)('zero')
         PsiWhiteSpace(' ')
         PsiElement(=)('=')
@@ -237,23 +237,23 @@ FILE
     BLOCK
       ASSIGNMENT_STMT
         DESIGNATOR
-          DATA_REFERENCE
-            DATA_REFERENCE_PART
+          DATA_PATH
+            FortranDataReferenceElementImpl(PATH)
               PsiElement(identifier)('x')
         PsiWhiteSpace(' ')
         PsiElement(=)('=')
         PsiWhiteSpace(' ')
         ADD_EXPR
           DESIGNATOR
-            DATA_REFERENCE
-              DATA_REFERENCE_PART
+            DATA_PATH
+              FortranDataReferenceElementImpl(PATH)
                 PsiElement(identifier)('y')
           PsiWhiteSpace(' ')
           PsiElement(+)('+')
           PsiWhiteSpace(' ')
           DESIGNATOR
-            DATA_REFERENCE
-              DATA_REFERENCE_PART
+            DATA_PATH
+              FortranDataReferenceElementImpl(PATH)
                 PsiElement(identifier)('z')
       PsiElement(eol)('\n')
     END_SUBROUTINE_STMT

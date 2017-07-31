@@ -5,8 +5,8 @@ FILE
         PsiElement(keyword)('lock')
         PsiElement(()('(')
         DESIGNATOR
-          DATA_REFERENCE
-            DATA_REFERENCE_PART
+          DATA_PATH
+            FortranDataReferenceElementImpl(PATH)
               PsiElement(identifier)('a')
         PsiElement(,)(',')
         PsiWhiteSpace(' ')
@@ -17,8 +17,8 @@ FILE
             PsiElement(=)('=')
             PsiWhiteSpace(' ')
             DESIGNATOR
-              DATA_REFERENCE
-                DATA_REFERENCE_PART
+              DATA_PATH
+                FortranDataReferenceElementImpl(PATH)
                   PsiElement(identifier)('st')
         PsiElement())(')')
       PsiElement(eol)('\n')
@@ -48,8 +48,8 @@ FILE
           PsiElement(=)('=')
           PsiWhiteSpace(' ')
           DESIGNATOR
-            DATA_REFERENCE
-              DATA_REFERENCE_PART
+            DATA_PATH
+              FortranDataReferenceElementImpl(PATH)
                 PsiElement(identifier)('e')
         PsiElement())(')')
       PsiElement(eol)('\n')
@@ -89,13 +89,13 @@ FILE
         PsiElement(()('(')
         ADD_EXPR
           DESIGNATOR
-            DATA_REFERENCE
-              DATA_REFERENCE_PART
+            DATA_PATH
+              FortranDataReferenceElementImpl(PATH)
                 PsiElement(identifier)('a')
           PsiElement(+)('+')
           DESIGNATOR
-            DATA_REFERENCE
-              DATA_REFERENCE_PART
+            DATA_PATH
+              FortranDataReferenceElementImpl(PATH)
                 PsiElement(identifier)('c')
         PsiElement())(')')
         PsiWhiteSpace(' ')
@@ -113,13 +113,13 @@ FILE
         PsiWhiteSpace(' ')
         ADD_EXPR
           DESIGNATOR
-            DATA_REFERENCE
-              DATA_REFERENCE_PART
+            DATA_PATH
+              FortranDataReferenceElementImpl(PATH)
                 PsiElement(identifier)('a')
           PsiElement(+)('+')
           DESIGNATOR
-            DATA_REFERENCE
-              DATA_REFERENCE_PART
+            DATA_PATH
+              FortranDataReferenceElementImpl(PATH)
                 PsiElement(identifier)('b')
       PsiElement(eol)('\n')
       ERROR_STOP_STMT
@@ -131,8 +131,8 @@ FILE
         PsiElement(keyword)('unlock')
         PsiElement(()('(')
         DESIGNATOR
-          DATA_REFERENCE
-            DATA_REFERENCE_PART
+          DATA_PATH
+            FortranDataReferenceElementImpl(PATH)
               PsiElement(identifier)('a')
         PsiElement())(')')
       PsiElement(eol)('\n')

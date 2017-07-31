@@ -62,8 +62,8 @@ FILE
         PsiWhiteSpace(' ')
         PsiElement(()('(')
         DESIGNATOR
-          DATA_REFERENCE
-            DATA_REFERENCE_PART
+          DATA_PATH
+            FortranDataReferenceElementImpl(PATH)
               PsiElement(identifier)('if')
         PsiElement())(')')
         PsiWhiteSpace(' ')
@@ -77,22 +77,25 @@ FILE
             PsiElement(*)('*')
           PsiElement())(')')
           PsiWhiteSpace(' ')
-          DESIGNATOR
-            DATA_REFERENCE
-              DATA_REFERENCE_PART
-                PsiElement(identifier)('end')
+          OUTPUT_ITEM
+            DESIGNATOR
+              DATA_PATH
+                FortranDataReferenceElementImpl(PATH)
+                  PsiElement(identifier)('end')
           PsiElement(,)(',')
           PsiWhiteSpace(' ')
-          DESIGNATOR
-            DATA_REFERENCE
-              DATA_REFERENCE_PART
-                PsiElement(identifier)('integer')
+          OUTPUT_ITEM
+            DESIGNATOR
+              DATA_PATH
+                FortranDataReferenceElementImpl(PATH)
+                  PsiElement(identifier)('integer')
           PsiElement(,)(',')
           PsiWhiteSpace(' ')
-          DESIGNATOR
-            DATA_REFERENCE
-              DATA_REFERENCE_PART
-                PsiElement(identifier)('write')
+          OUTPUT_ITEM
+            DESIGNATOR
+              DATA_PATH
+                FortranDataReferenceElementImpl(PATH)
+                  PsiElement(identifier)('write')
       PsiElement(eol)('\n')
     END_PROGRAM_STMT
       PsiElement(keyword)('end')

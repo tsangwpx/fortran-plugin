@@ -41,8 +41,8 @@ FILE
             BLOCK
               ASSIGNMENT_STMT
                 DESIGNATOR
-                  DATA_REFERENCE
-                    DATA_REFERENCE_PART
+                  DATA_PATH
+                    FortranDataReferenceElementImpl(PATH)
                       PsiElement(identifier)('a')
                 PsiWhiteSpace(' ')
                 PsiElement(=)('=')
@@ -103,8 +103,8 @@ FILE
             BLOCK
               ASSIGNMENT_STMT
                 DESIGNATOR
-                  DATA_REFERENCE
-                    DATA_REFERENCE_PART
+                  DATA_PATH
+                    FortranDataReferenceElementImpl(PATH)
                       PsiElement(identifier)('c')
                 PsiWhiteSpace(' ')
                 PsiElement(=)('=')

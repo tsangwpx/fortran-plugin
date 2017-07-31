@@ -18,8 +18,8 @@ FILE
           PsiWhiteSpace(' ')
           LOOP_CONTROL
             DESIGNATOR
-              DATA_REFERENCE
-                DATA_REFERENCE_PART
+              DATA_PATH
+                FortranDataReferenceElementImpl(PATH)
                   PsiElement(identifier)('i')
             PsiElement(=)('=')
             CONSTANT
@@ -34,16 +34,16 @@ FILE
           PsiWhiteSpace('    ')
           ASSIGNMENT_STMT
             DESIGNATOR
-              DATA_REFERENCE
-                DATA_REFERENCE_PART
+              DATA_PATH
+                FortranDataReferenceElementImpl(PATH)
                   PsiElement(identifier)('j')
             PsiWhiteSpace(' ')
             PsiElement(=)('=')
             PsiWhiteSpace(' ')
             ADD_EXPR
               DESIGNATOR
-                DATA_REFERENCE
-                  DATA_REFERENCE_PART
+                DATA_PATH
+                  FortranDataReferenceElementImpl(PATH)
                     PsiElement(identifier)('j')
               PsiElement(+)('+')
               CONSTANT
@@ -63,8 +63,8 @@ FILE
           PsiWhiteSpace(' ')
           LOOP_CONTROL
             DESIGNATOR
-              DATA_REFERENCE
-                DATA_REFERENCE_PART
+              DATA_PATH
+                FortranDataReferenceElementImpl(PATH)
                   PsiElement(identifier)('i')
             PsiElement(=)('=')
             CONSTANT
@@ -80,16 +80,16 @@ FILE
         BLOCK
           ASSIGNMENT_STMT
             DESIGNATOR
-              DATA_REFERENCE
-                DATA_REFERENCE_PART
+              DATA_PATH
+                FortranDataReferenceElementImpl(PATH)
                   PsiElement(identifier)('j')
             PsiWhiteSpace(' ')
             PsiElement(=)('=')
             PsiWhiteSpace(' ')
             ADD_EXPR
               DESIGNATOR
-                DATA_REFERENCE
-                  DATA_REFERENCE_PART
+                DATA_PATH
+                  FortranDataReferenceElementImpl(PATH)
                     PsiElement(identifier)('j')
               PsiElement(-)('-')
               CONSTANT
@@ -114,8 +114,8 @@ FILE
             PsiElement(()('(')
             REL_EXPR
               DESIGNATOR
-                DATA_REFERENCE
-                  DATA_REFERENCE_PART
+                DATA_PATH
+                  FortranDataReferenceElementImpl(PATH)
                     PsiElement(identifier)('j')
               PsiWhiteSpace(' ')
               PsiElement(LT)('<')
@@ -128,16 +128,16 @@ FILE
         BLOCK
           ASSIGNMENT_STMT
             DESIGNATOR
-              DATA_REFERENCE
-                DATA_REFERENCE_PART
+              DATA_PATH
+                FortranDataReferenceElementImpl(PATH)
                   PsiElement(identifier)('j')
             PsiWhiteSpace(' ')
             PsiElement(=)('=')
             PsiWhiteSpace(' ')
             ADD_EXPR
               DESIGNATOR
-                DATA_REFERENCE
-                  DATA_REFERENCE_PART
+                DATA_PATH
+                  FortranDataReferenceElementImpl(PATH)
                     PsiElement(identifier)('j')
               PsiWhiteSpace(' ')
               PsiElement(+)('+')
@@ -191,8 +191,8 @@ FILE
               PsiWhiteSpace(' ')
               REL_EXPR
                 DESIGNATOR
-                  DATA_REFERENCE
-                    DATA_REFERENCE_PART
+                  DATA_PATH
+                    FortranDataReferenceElementImpl(PATH)
                       PsiElement(identifier)('a')
                 PsiWhiteSpace(' ')
                 PsiElement(GT)('>')
@@ -205,16 +205,16 @@ FILE
         BLOCK
           ASSIGNMENT_STMT
             DESIGNATOR
-              DATA_REFERENCE
-                DATA_REFERENCE_PART
+              DATA_PATH
+                FortranDataReferenceElementImpl(PATH)
                   PsiElement(identifier)('j')
             PsiWhiteSpace(' ')
             PsiElement(=)('=')
             PsiWhiteSpace(' ')
             ADD_EXPR
               DESIGNATOR
-                DATA_REFERENCE
-                  DATA_REFERENCE_PART
+                DATA_PATH
+                  FortranDataReferenceElementImpl(PATH)
                     PsiElement(identifier)('j')
               PsiElement(-)('-')
               CONSTANT
@@ -223,16 +223,16 @@ FILE
           PsiWhiteSpace('    ')
           ASSIGNMENT_STMT
             DESIGNATOR
-              DATA_REFERENCE
-                DATA_REFERENCE_PART
+              DATA_PATH
+                FortranDataReferenceElementImpl(PATH)
                   PsiElement(identifier)('j')
             PsiWhiteSpace(' ')
             PsiElement(=)('=')
             PsiWhiteSpace(' ')
             ADD_EXPR
               DESIGNATOR
-                DATA_REFERENCE
-                  DATA_REFERENCE_PART
+                DATA_PATH
+                  FortranDataReferenceElementImpl(PATH)
                     PsiElement(identifier)('j')
               PsiWhiteSpace(' ')
               PsiElement(+)('+')

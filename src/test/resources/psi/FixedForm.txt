@@ -20,8 +20,8 @@ FILE
       PsiWhiteSpace('      ')
       ASSIGNMENT_STMT
         DESIGNATOR
-          DATA_REFERENCE
-            DATA_REFERENCE_PART
+          DATA_PATH
+            FortranDataReferenceElementImpl(PATH)
               PsiElement(identifier)('x')
         PsiWhiteSpace(' ')
         PsiElement(=)('=')
@@ -47,29 +47,31 @@ FILE
         PsiElement(,)(',')
         PsiWhiteSpace(' ')
         DESIGNATOR
-          DATA_REFERENCE
-            DATA_REFERENCE_PART
+          DATA_PATH
+            FortranDataReferenceElementImpl(PATH)
               PsiElement(identifier)('a')
         PsiElement())(')')
         PsiWhiteSpace(' ')
-        DESIGNATOR
-          DATA_REFERENCE
-            DATA_REFERENCE_PART
-              PsiElement(identifier)('c')
+        OUTPUT_ITEM
+          DESIGNATOR
+            DATA_PATH
+              FortranDataReferenceElementImpl(PATH)
+                PsiElement(identifier)('c')
         PsiElement(,)(',')
         PsiWhiteSpace(' ')
-        DESIGNATOR
-          DATA_REFERENCE
-            DATA_REFERENCE_PART
-              PsiElement(identifier)('b')
+        OUTPUT_ITEM
+          DESIGNATOR
+            DATA_PATH
+              FortranDataReferenceElementImpl(PATH)
+                PsiElement(identifier)('b')
       PsiElement(eol)('\n')
       LABEL
         PsiElement(integerliteral)('123')
       PsiWhiteSpace('   ')
       ASSIGNMENT_STMT
         DESIGNATOR
-          DATA_REFERENCE
-            DATA_REFERENCE_PART
+          DATA_PATH
+            FortranDataReferenceElementImpl(PATH)
               PsiElement(identifier)('y')
         PsiWhiteSpace(' ')
         PsiElement(=)('=')
@@ -85,8 +87,8 @@ FILE
       PsiWhiteSpace('      ')
       ASSIGNMENT_STMT
         DESIGNATOR
-          DATA_REFERENCE
-            DATA_REFERENCE_PART
+          DATA_PATH
+            FortranDataReferenceElementImpl(PATH)
               PsiElement(identifier)('str')
         PsiWhiteSpace(' ')
         PsiElement(=)('=')
@@ -99,8 +101,8 @@ FILE
       PsiWhiteSpace('      ')
       ASSIGNMENT_STMT
         DESIGNATOR
-          DATA_REFERENCE
-            DATA_REFERENCE_PART
+          DATA_PATH
+            FortranDataReferenceElementImpl(PATH)
               PsiElement(identifier)('END')
               PsiElement(()('(')
               SECTION_SUBSCRIPT
@@ -112,8 +114,8 @@ FILE
         PsiWhiteSpace(' ')
         ADD_EXPR
           DESIGNATOR
-            DATA_REFERENCE
-              DATA_REFERENCE_PART
+            DATA_PATH
+              FortranDataReferenceElementImpl(PATH)
                 PsiElement(identifier)('STARTA')
                 PsiElement(()('(')
                 SECTION_SUBSCRIPT
@@ -128,8 +130,8 @@ FILE
               PsiElement(()('(')
               ADD_EXPR
                 DESIGNATOR
-                  DATA_REFERENCE
-                    DATA_REFERENCE_PART
+                  DATA_PATH
+                    FortranDataReferenceElementImpl(PATH)
                       PsiElement(identifier)('NPIXA')
                       PsiElement(()('(')
                       SECTION_SUBSCRIPT
@@ -142,8 +144,8 @@ FILE
               PsiElement())(')')
             PsiElement(*)('*')
             DESIGNATOR
-              DATA_REFERENCE
-                DATA_REFERENCE_PART
+              DATA_PATH
+                FortranDataReferenceElementImpl(PATH)
                   PsiElement(identifier)('STEPA')
                   PsiElement(()('(')
                   SECTION_SUBSCRIPT

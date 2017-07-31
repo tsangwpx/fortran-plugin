@@ -10,7 +10,7 @@ import org.jetbrains.fortran.lang.psi.FortranFile
 class FortranFileStub(file: FortranFile?) : PsiFileStubImpl<FortranFile>(file) {
     override fun getType() = Type
 
-    object Type : IStubFileElementType<FortranFileStub>(FortranLanguage.INSTANCE) {
+    object Type : IStubFileElementType<FortranFileStub>(FortranLanguage) {
         // Bump this number if Stub structure changes
         override fun getStubVersion(): Int = 1
 
