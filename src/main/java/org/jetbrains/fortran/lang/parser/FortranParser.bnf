@@ -12,7 +12,7 @@
   psiImplClassSuffix='Impl'
   psiPackage='org.jetbrains.fortran.lang.psi'
   psiImplPackage='org.jetbrains.fortran.lang.psi.impl'
-
+//  psiImplUtilClass="org.jetbrains.fortran.lang.psi.impl.FortranPsiImplUtil"
   generateTokenAccessors=true
   tokens=[
     EQ        = '='
@@ -614,13 +614,14 @@ parent_string ::= data_path | string_literal
 substring_range ::= (expr)? ':' (expr)?
 // R611
 data_path ::= data_reference_element ('%' data_reference_element)*
-data_path ::= data_reference_element ('%' data_reference_element)*
 // R612
 data_reference_element ::= fidentifier ('(' <<list section_subscript>>? ')')? (image_selector)? {
-    implements='org.jetbrains.fortran.lang.psi.ext.FortranReferenceElement'
+    implements=['org.jetbrains.fortran.lang.psi.ext.FortranReferenceElement'
+                'org.jetbrains.fortran.lang.psi.ext.FortranNamedElement']
     stubClass = "org.jetbrains.fortran.lang.core.stubs.FortranDataReferenceStub"
     mixin='org.jetbrains.fortran.lang.psi.ext.FortranDataReferenceElementMixin'
     elementTypeFactory = "org.jetbrains.fortran.lang.core.stubs.StubFactoryKt.factory"
+//    methods=[getReference getName setName getPresentation]
 }
 // R613 - 614 are trivial
 // R615 - 618 are excrescent

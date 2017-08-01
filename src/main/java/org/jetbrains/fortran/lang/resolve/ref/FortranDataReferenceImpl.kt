@@ -9,13 +9,14 @@ class FortranDataReferenceImpl(element: FortranReferenceElement) :
     FortranReferenceBase<FortranReferenceElement>(element) {
 
     override fun getVariants(): Array<Any> {
+        System.out.println("We are finding variants now")
         return emptyArray()
     }
 
     override fun resolve(): FortranCompositeElement? {
        // val project = myElement.project
        /// val properties = FortranUtil.findProperties(project, key)
-System.out.println("We are resolving now")
+        System.out.println("We are resolving now")
         return null
     }
 

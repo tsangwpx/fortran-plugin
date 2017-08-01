@@ -1,12 +1,17 @@
 package org.jetbrains.fortran.lang.psi.ext
 
 import com.intellij.lang.ASTNode
+import com.intellij.navigation.ItemPresentation
 import com.intellij.psi.PsiElement
 import com.intellij.psi.stubs.IStubElementType
+import org.jetbrains.fortran.FortranIcons
+import org.jetbrains.fortran.lang.FortranTypes
 import org.jetbrains.fortran.lang.FortranTypes.IDENTIFIER
 import org.jetbrains.fortran.lang.core.stubs.FortranDataReferenceStub
 import org.jetbrains.fortran.lang.psi.FortranDataReferenceElement
+import org.jetbrains.fortran.lang.psi.FortranElementFactory
 import org.jetbrains.fortran.lang.resolve.ref.FortranDataReferenceImpl
+import javax.swing.Icon
 
 abstract class FortranDataReferenceElementMixin :
     FortranStubbedElementImpl<FortranDataReferenceStub>,
@@ -23,5 +28,42 @@ abstract class FortranDataReferenceElementMixin :
     override val referenceName: String get() = stub?.referenceName ?: referenceNameElement.text
 
     override fun getReference() = FortranDataReferenceImpl(this)
+
+    fun getName(element: FortranDataReferenceElement): String? {
+        println("GET NAME")
+        val keyNode = element.node.findChildByType(FortranTypes.IDENTIFIER)
+        if (keyNode != null) {
+            // IMPORTANT: Convert embedded escaped spaces to simple spaces
+            return keyNode.text
+        } else {
+            return null
+        }
+    }
+
+    fun setName(element: FortranDataReferenceElement, newName: String): PsiElement {
+        val keyNode = element.node.findChildByType(FortranTypes.IDENTIFIER)
+        if (keyNode != null) {
+            val newElement = FortranElementFactory.createFortranDataReferenceElement(element.project, newName)
+            val newKeyNode = newElement.firstChild.node
+            element.node.replaceChild(keyNode, newKeyNode)
+        }
+        return element
+    }
+
+    fun getPresentation(element: FortranReferenceElement): ItemPresentation {
+        return object : ItemPresentation {
+            override fun getPresentableText(): String? {
+                return element.referenceName
+            }
+
+            override fun getLocationString(): String? {
+                return element.containingFile.name
+            }
+
+            override fun getIcon(unused: Boolean): Icon? {
+                return FortranIcons.fileTypeIcon
+            }
+        }
+    }
 }
 

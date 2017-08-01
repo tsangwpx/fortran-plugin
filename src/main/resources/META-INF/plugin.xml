@@ -49,7 +49,8 @@
         <lang.foldingBuilder language="Fortran fixed form" implementationClass="org.jetbrains.fortran.ide.folding.FortranFoldingBuilder"/>
 
         <!-- Navigation -->
-        <psi.referenceContributor language="Fortran" implementation="org.jetbrains.fortran.lang.resolve.ref.FortranReferenceContributor" />
+        <psi.referenceContributor implementation="org.jetbrains.fortran.lang.resolve.ref.FortranReferenceContributor"/>
+        <gotoSymbolContributor implementation="org.jetbrains.fortran.lang.resolve.ref.FortranChooseByNameContributor"/>
     </extensions>
 
     <actions>
