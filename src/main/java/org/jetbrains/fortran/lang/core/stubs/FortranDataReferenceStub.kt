@@ -10,7 +10,9 @@ class FortranDataReferenceStub(
     parent: StubElement<*>?, elementType: IStubElementType<*, *>,
     val referenceName: String
 ) : StubBase<FortranDataReferenceElement>(parent, elementType) {
-
+init {
+    System.out.println("DataReferenceStub exists")
+}
     object Type : FortranStubElementType<FortranDataReferenceStub, FortranDataReferenceElement>("PATH") {
         override fun shouldCreateStub(node: ASTNode): Boolean = createStubIfParentIsStub(node)
 

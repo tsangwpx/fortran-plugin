@@ -13,9 +13,9 @@ class FortranChooseByNameContributor   : ChooseByNameContributor/*, GotoClassCon
     private val clazz = FortranNamedElement::class.java
 
         init {
-
             System.out.println("FortranChooseByNameContributor Init")
         }
+
         override fun getNames(project: Project?, includeNonProjectItems: Boolean): Array<out String> {
             project ?: return emptyArray()
             return StubIndex.getInstance().getAllKeys(indexKey, project).toTypedArray()

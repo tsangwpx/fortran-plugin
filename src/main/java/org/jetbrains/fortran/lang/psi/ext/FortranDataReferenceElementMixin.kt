@@ -19,7 +19,7 @@ abstract class FortranDataReferenceElementMixin :
 
     constructor(node: ASTNode) : super(node)
 
-    constructor(stub: FortranDataReferenceStub, nodeType: IStubElementType<*, *>) : super(stub, nodeType)
+    constructor(stub: FortranDataReferenceStub, nodeType: IStubElementType<*, *>) : super(stub, nodeType) { System.out.println("Mixin from stub") }
 
     override val referenceNameElement = checkNotNull(identifier) {
         "Data reference must contain identifier: $this ${this.text} at ${this.containingFile.virtualFile.path}"
@@ -29,7 +29,7 @@ abstract class FortranDataReferenceElementMixin :
 
     override fun getReference() = FortranDataReferenceImpl(this)
 
-    fun getName(element: FortranDataReferenceElement): String? {
+  /*  fun getName(element: FortranDataReferenceElement): String? {
         println("GET NAME")
         val keyNode = element.node.findChildByType(FortranTypes.IDENTIFIER)
         if (keyNode != null) {
@@ -64,6 +64,6 @@ abstract class FortranDataReferenceElementMixin :
                 return FortranIcons.fileTypeIcon
             }
         }
-    }
+    }*/
 }
 

@@ -26,8 +26,10 @@
     <extensions defaultExtensionNs="com.intellij">
         <fileTypeFactory implementation="org.jetbrains.fortran.FortranFileTypeFactory"/>
         <lang.parserDefinition language="Fortran" implementationClass="org.jetbrains.fortran.lang.parser.FortranParserDefinition"/>
+        <stubElementTypeHolder class="org.jetbrains.fortran.lang.FortranTypes"/>
         <lang.syntaxHighlighterFactory language="Fortran"
                                        implementationClass="org.jetbrains.fortran.ide.highlighter.FortranSyntaxHighlighterFactory"/>
+
         <!-- fixed form source-->
         <fileTypeFactory implementation="org.jetbrains.fortran.FortranFixedFormFileTypeFactory"/>
         <lang.parserDefinition language="Fortran fixed form" implementationClass="org.jetbrains.fortran.lang.parser.FortranFixedFormParserDefinition"/>
@@ -51,6 +53,9 @@
         <!-- Navigation -->
         <psi.referenceContributor implementation="org.jetbrains.fortran.lang.resolve.ref.FortranReferenceContributor"/>
         <gotoSymbolContributor implementation="org.jetbrains.fortran.lang.resolve.ref.FortranChooseByNameContributor"/>
+
+        <!-- Indices -->
+        <stubIndex implementation="org.jetbrains.fortran.lang.core.stubs.index.FortranNamedElementIndex"/>
     </extensions>
 
     <actions>
