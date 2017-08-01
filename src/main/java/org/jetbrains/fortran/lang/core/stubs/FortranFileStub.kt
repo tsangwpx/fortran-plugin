@@ -40,7 +40,7 @@ class FortranFileStub(file: FortranFile?) : PsiFileStubImpl<FortranFile>(file) {
             val path = psi.containingFile?.virtualFile?.path
             if (path != null && PARESED.add(path)) {
                 println("Parsing (${PARESED.size}) ${path}")
-                //Exception().printStackTrace(System.out)
+            //    Exception().printStackTrace(System.out)
                 println()
             }
             return super.doParseContents(chameleon, psi)

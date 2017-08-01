@@ -2,6 +2,7 @@ package org.jetbrains.fortran.lang.core.stubs
 
 import com.intellij.lang.ASTNode
 import com.intellij.psi.stubs.*
+import org.jetbrains.fortran.lang.core.stubs.index.FortranNamedElementIndex
 import org.jetbrains.fortran.lang.psi.FortranDataReferenceElement
 import org.jetbrains.fortran.lang.psi.impl.FortranDataReferenceElementImpl
 import org.jetbrains.fortran.lang.resolve.ref.FortranDataReferenceImpl
@@ -33,7 +34,14 @@ init {
             }
 
         override fun indexStub(stub: FortranDataReferenceStub, sink: IndexSink) {
-            //NOP
+            sink.indexNamedStub(stub)
         }
+
+    }
+}
+
+private fun IndexSink.indexNamedStub(stub: FortranDataReferenceStub) {
+    stub.referenceName?.let {
+        occurrence(FortranNamedElementIndex.KEY, it)
     }
 }
