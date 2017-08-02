@@ -32,7 +32,7 @@ abstract class FortranReferenceBase<T : FortranReferenceElement>(element: T)
             return TextRange.from(anchor.startOffsetInParent, anchor.textLength)
         }
 
-        abstract override fun resolve(): FortranCompositeElement?
+    //    abstract override fun resolve(): FortranCompositeElement?
 
         override fun equals(other: Any?): Boolean = other is FortranReferenceBase<*> && element === other.element
 
