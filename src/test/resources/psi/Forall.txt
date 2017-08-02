@@ -79,11 +79,11 @@ FILE
                 PsiElement(integerliteral)('2')
           PsiElement(eol)('\n')
           PsiWhiteSpace(' ')
-          LABEL
-            PsiElement(integerliteral)('1')
-          PsiWhiteSpace(' ')
           FORALL_CONSTRUCT
             FORALL_CONSTRUCT_STMT
+              LABEL
+                PsiElement(integerliteral)('1')
+              PsiWhiteSpace(' ')
               PsiElement(keyword)('forall')
               PsiWhiteSpace(' ')
               FORALL_HEADER
@@ -103,10 +103,10 @@ FILE
             PsiElement(eol)('\n')
             PsiWhiteSpace(' ')
             BLOCK
-              LABEL
-                PsiElement(integerliteral)('2')
-              PsiWhiteSpace('    ')
               ASSIGNMENT_STMT
+                LABEL
+                  PsiElement(integerliteral)('2')
+                PsiWhiteSpace('    ')
                 DESIGNATOR
                   DATA_PATH
                     FortranDataReferenceElementImpl(PATH)

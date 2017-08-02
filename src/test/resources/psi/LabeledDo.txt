@@ -195,10 +195,10 @@ FILE
               PsiElement(keyword)('enddo')
       PsiElement(eol)('\n')
       PsiWhiteSpace(' ')
-      LABEL
-        PsiElement(integerliteral)('11')
-      PsiWhiteSpace('   ')
       ASSIGNMENT_STMT
+        LABEL
+          PsiElement(integerliteral)('11')
+        PsiWhiteSpace('   ')
         DESIGNATOR
           DATA_PATH
             FortranDataReferenceElementImpl(PATH)

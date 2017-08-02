@@ -65,10 +65,10 @@ FILE
               FortranDataReferenceElementImpl(PATH)
                 PsiElement(identifier)('b')
       PsiElement(eol)('\n')
-      LABEL
-        PsiElement(integerliteral)('123')
-      PsiWhiteSpace('   ')
       ASSIGNMENT_STMT
+        LABEL
+          PsiElement(integerliteral)('123')
+        PsiWhiteSpace('   ')
         DESIGNATOR
           DATA_PATH
             FortranDataReferenceElementImpl(PATH)

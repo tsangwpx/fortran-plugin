@@ -9,10 +9,10 @@ FILE
       PsiElement(identifier)('a')
     PsiElement(eol)('\n')
     BLOCK
-      LABEL
-        PsiElement(integerliteral)('2')
-      PsiWhiteSpace('   ')
       TYPE_DECLARATION_STMT
+        LABEL
+          PsiElement(integerliteral)('2')
+        PsiWhiteSpace('   ')
         INTRINSIC_TYPE_SPEC
           PsiElement(keyword)('real')
         PsiWhiteSpace(' ')
@@ -40,10 +40,10 @@ FILE
           PsiElement(identifier)('aa')
         PsiElement(eol)('\n')
         BLOCK
-          LABEL
-            PsiElement(integerliteral)('5')
-          PsiWhiteSpace('     ')
           ASSIGNMENT_STMT
+            LABEL
+              PsiElement(integerliteral)('5')
+            PsiWhiteSpace('     ')
             DESIGNATOR
               DATA_PATH
                 FortranDataReferenceElementImpl(PATH)
@@ -85,10 +85,10 @@ FILE
               PsiElement())(')')
             PsiElement(eol)('\n')
             BLOCK
-              LABEL
-                PsiElement(integerliteral)('8')
-              PsiWhiteSpace('       ')
               RETURN_STMT
+                LABEL
+                  PsiElement(integerliteral)('8')
+                PsiWhiteSpace('       ')
                 PsiElement(keyword)('return')
                 PsiWhiteSpace(' ')
                 MULT_EXPR

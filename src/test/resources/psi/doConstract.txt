@@ -9,11 +9,11 @@ FILE
       PsiElement(identifier)('a')
     PsiElement(eol)('\n')
     BLOCK
-      LABEL
-        PsiElement(integerliteral)('2')
-      PsiWhiteSpace('  ')
       NONLABEL_DO_CONSTRUCT
         NONLABEL_DO_STMT
+          LABEL
+            PsiElement(integerliteral)('2')
+          PsiWhiteSpace('  ')
           PsiElement(keyword)('do')
           PsiWhiteSpace(' ')
           LOOP_CONTROL
@@ -29,10 +29,10 @@ FILE
               PsiElement(integerliteral)('5')
         PsiElement(eol)('\n')
         BLOCK
-          LABEL
-            PsiElement(integerliteral)('3')
-          PsiWhiteSpace('    ')
           ASSIGNMENT_STMT
+            LABEL
+              PsiElement(integerliteral)('3')
+            PsiWhiteSpace('    ')
             DESIGNATOR
               DATA_PATH
                 FortranDataReferenceElementImpl(PATH)

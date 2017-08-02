@@ -7,10 +7,10 @@ FILE
     PsiElement(eol)('\n')
     PsiWhiteSpace('  ')
     BLOCK
-      LABEL
-        PsiElement(integerliteral)('1')
-      PsiWhiteSpace('  ')
       ASSIGNMENT_STMT
+        LABEL
+          PsiElement(integerliteral)('1')
+        PsiWhiteSpace('  ')
         DESIGNATOR
           DATA_PATH
             FortranDataReferenceElementImpl(PATH)

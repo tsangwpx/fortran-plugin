@@ -75,10 +75,10 @@ FILE
                 PsiElement(identifier)('item3')
       PsiElement(eol)('\n')
       PsiWhiteSpace('  ')
-      LABEL
-        PsiElement(integerliteral)('130')
-      PsiWhiteSpace(' ')
       FORMAT_STMT
+        LABEL
+          PsiElement(integerliteral)('130')
+        PsiWhiteSpace(' ')
         PsiElement(keyword)('format')
         PsiWhiteSpace(' ')
         PsiElement(()('(')

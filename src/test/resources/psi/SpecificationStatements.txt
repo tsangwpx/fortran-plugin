@@ -122,10 +122,10 @@ FILE
           PsiElement())(')')
       PsiElement(eol)('\n')
       PsiWhiteSpace(' ')
-      LABEL
-        PsiElement(integerliteral)('20')
-      PsiWhiteSpace(' ')
       IMPLICIT_STMT
+        LABEL
+          PsiElement(integerliteral)('20')
+        PsiWhiteSpace(' ')
         PsiElement(keyword)('implicit')
         PsiWhiteSpace(' ')
         IMPLICIT_SPEC
