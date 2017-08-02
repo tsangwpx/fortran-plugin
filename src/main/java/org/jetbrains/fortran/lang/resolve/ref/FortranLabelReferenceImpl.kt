@@ -14,11 +14,12 @@ class FortranLabelReferenceImpl(element: FortranReferenceElement) :
     override val FortranReferenceElement.referenceAnchor: PsiElement get() = referenceNameElement
 
     override fun getVariants(): Array<Any> {
-        System.out.println("We are finding variants now")
+      //  System.out.println("We are finding variants now")
         return emptyArray()
     }
 
     override fun resolveInner(): List<FortranNamedElement>  {
+        System.out.println("check ref")
         var psiElement : PsiElement = element
        // find the root of the tree
        while (psiElement !is FortranFile) psiElement = psiElement.parent
@@ -29,4 +30,9 @@ class FortranLabelReferenceImpl(element: FortranReferenceElement) :
                .toMutableList()
        return tmp
    }
+
+    override fun isReferenceTo(element: PsiElement) : Boolean {
+        System.out.println("isReferenceTo")
+        return super.isReferenceTo(element)
+    }
 }

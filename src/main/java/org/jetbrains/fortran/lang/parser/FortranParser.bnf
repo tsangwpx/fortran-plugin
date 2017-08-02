@@ -474,9 +474,7 @@ attr_spec ::= access_spec | allocatable_ | asynchronous_ | (codimension_ '[' coa
              | optional_ | parameter_ | pointer_ | protected_ | save_ | target_ | value_ | volatile_
 // R503
 entity_decl ::= fidentifier ('(' array_spec ')')? ('[' coarray_spec ']')?
-                ('*' char_length)? initialization? {
-                implements='org.jetbrains.fortran.lang.psi.ext.FortranNamedElement'
-                }
+                ('*' char_length)? initialization?
 // R504 is trivial
 // R505
 private initialization ::= ('=' expr) | ('=>' designator) | ('=>' function_reference) | ('/' <<list data_stmt_value>> '/')

@@ -39,17 +39,17 @@ abstract class FortranDataReferenceElementMixin :
             return null
         }
     }
-
-    fun setName(element: FortranDataReferenceElement, newName: String): PsiElement {
-        val keyNode = element.node.findChildByType(FortranTypes.IDENTIFIER)
+*/
+    override fun setName(newName: String): PsiElement {
+        val keyNode = node.findChildByType(FortranTypes.IDENTIFIER)
         if (keyNode != null) {
-            val newElement = FortranElementFactory.createFortranDataReferenceElement(element.project, newName)
+            val newElement = FortranElementFactory.createFortranDataReferenceElement(project, newName)
             val newKeyNode = newElement.firstChild.node
-            element.node.replaceChild(keyNode, newKeyNode)
+            node.replaceChild(keyNode, newKeyNode)
         }
-        return element
+        return this
     }
-
+/*
     fun getPresentation(element: FortranReferenceElement): ItemPresentation {
         return object : ItemPresentation {
             override fun getPresentableText(): String? {

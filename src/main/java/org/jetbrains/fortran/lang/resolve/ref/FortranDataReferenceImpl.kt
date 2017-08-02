@@ -14,7 +14,6 @@ class FortranDataReferenceImpl(element: FortranReferenceElement) :
     override val FortranReferenceElement.referenceAnchor: PsiElement get() = referenceNameElement
 
     override fun getVariants(): Array<Any> {
-        System.out.println("We are finding variants now")
         return emptyArray()
     }
 
@@ -22,7 +21,6 @@ class FortranDataReferenceImpl(element: FortranReferenceElement) :
        // val project = myElement.project
        /// val properties = FortranUtil.findProperties(project, key)
 //        Exception().printStackTrace(System.out)
-        System.out.println("We are resolving now")
         return null
     }
 

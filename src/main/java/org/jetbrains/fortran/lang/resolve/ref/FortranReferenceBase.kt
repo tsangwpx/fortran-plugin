@@ -19,8 +19,7 @@ abstract class FortranReferenceBase<T : FortranReferenceElement>(element: T)
                             r.resolveInner().map(::PsiElementResolveResult).toTypedArray()
                         }, true, false)
 
-        final override fun multiResolve(): List<FortranNamedElement> =
-                multiResolve(false).asList().mapNotNull { it.element as? FortranNamedElement }
+        final override fun multiResolve(): List<FortranNamedElement> = multiResolve(false).asList().mapNotNull { it.element as? FortranNamedElement }
 
         abstract val T.referenceAnchor: PsiElement
 
@@ -32,7 +31,6 @@ abstract class FortranReferenceBase<T : FortranReferenceElement>(element: T)
             return TextRange.from(anchor.startOffsetInParent, anchor.textLength)
         }
 
-    //    abstract override fun resolve(): FortranCompositeElement?
 
         override fun equals(other: Any?): Boolean = other is FortranReferenceBase<*> && element === other.element
 
