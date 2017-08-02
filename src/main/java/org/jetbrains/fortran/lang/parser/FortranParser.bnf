@@ -58,6 +58,7 @@
 
     // for the external rule
     LABEL = 'LABEL'
+    LABEL_REF = 'LABEL_REF'
     LABELED_DO_CONSTRUCT = 'LABELED_DO_CONSTRUCT'
     LABEL_DO_STMT = 'LABEL_DO_STMT'
     DO_TERM_ACTION_STMT = 'DO_TERM_ACTION_STMT'
@@ -324,7 +325,7 @@ private action_stmt ::= assignment_stmt | pointer_assignment_stmt   | allocate_s
 // R309, R310, R311 are excess
 // R312
 external label ::= parseLabel
-
+external label_ref ::= parseLabelRef
 // Clause 4
 // R401
 private type_param_value ::= '*' | ':' | expr
@@ -841,11 +842,11 @@ private classdefault_guard ::= class_ default_ { pin = 2 }
 // R850
 exit_stmt ::= label? exit_ (fidentifier)? { pin = 2 }
 // R851
-goto_stmt ::= label? ((go_ to_) | goto_) label { pin = 3 }
+goto_stmt ::= label? ((go_ to_) | goto_) label_ref { pin = 3 }
 // R852 deprecated
 computed_goto_stmt ::= label? ((go_ to_) | goto_) '(' <<list label>> ')' (',')? expr { pin = 3 }
 // R853 deprecated
-arithmetic_if_stmt ::= label? if_ '(' expr ')' label ',' label ',' label { pin = 6 }
+arithmetic_if_stmt ::= label? if_ '(' expr ')' label_ref ',' label_ref ',' label_ref { pin = 6 }
 // R854
 continue_stmt ::= label? continue_ { pin = 2 }
 // R855
@@ -1073,7 +1074,7 @@ stmt_function_stmt ::= label? fidentifier '(' <<list fidentifier>>? ')' '=' expr
 
 // deleted statements
 pause_stmt ::= label? pause_ (expr)? { pin = 2 }
-assign_stmt ::= label? assign_ label to_ variable { pin = 2 }
+assign_stmt ::= label? assign_ label_ref to_ variable { pin = 2 }
 assigned_goto_stmt ::= label? (goto_ | (go_ to_)) fidentifier (','? '(' <<list label>> ')' )?  { pin = 3 }
 include_stmt ::= label? include_ string_literal { pin = 2 }
 

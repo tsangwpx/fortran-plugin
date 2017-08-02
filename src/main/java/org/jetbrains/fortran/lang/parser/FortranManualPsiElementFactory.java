@@ -11,7 +11,9 @@ public class FortranManualPsiElementFactory {
         IElementType type = node.getElementType();
         if (type == FortranTypes.LABEL) {
             return new FortranLabelImpl(node);
-        } else if (type == FortranTypes.LABELED_DO_CONSTRUCT) {
+        } else if (type == FortranTypes.LABEL_REF) {
+            return new FortranLabelRefImpl(node);
+        }else if (type == FortranTypes.LABELED_DO_CONSTRUCT) {
             return new FortranLabeledDoConstructImpl(node);
         } else if (type == FortranTypes.LABEL_DO_STMT) {
             return new FortranLabelDoStmtImpl(node);

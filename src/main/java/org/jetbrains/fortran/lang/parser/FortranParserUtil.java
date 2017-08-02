@@ -23,6 +23,10 @@ public class FortranParserUtil extends GeneratedParserUtilBase {
         return new LabelParser().parse(builder_, level_);
     }
 
+    public static boolean parseLabelRef(PsiBuilder builder_, int level_) {
+        return new LabelParser().parseRef(builder_, level_);
+    }
+
     public static boolean parseLabeledDoConstruct(PsiBuilder builder_, int level_) {
         return new LabeledDoConstructParser().parse(builder_, level_);
     }

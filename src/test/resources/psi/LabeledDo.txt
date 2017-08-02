@@ -11,7 +11,7 @@ FILE
         LABEL_DO_STMT
           PsiElement(keyword)('do')
           PsiWhiteSpace(' ')
-          LABEL
+          LABEL_REF
             PsiElement(integerliteral)('10')
           PsiWhiteSpace(' ')
           LOOP_CONTROL
@@ -50,7 +50,7 @@ FILE
             LABEL_DO_STMT
               PsiElement(keyword)('do')
               PsiWhiteSpace(' ')
-              LABEL
+              LABEL_REF
                 PsiElement(integerliteral)('100')
               PsiWhiteSpace(' ')
               LOOP_CONTROL
@@ -126,7 +126,7 @@ FILE
           LABEL_DO_STMT
             PsiElement(keyword)('do')
             PsiWhiteSpace(' ')
-            LABEL
+            LABEL_REF
               PsiElement(integerliteral)('10')
             PsiWhiteSpace(' ')
             LOOP_CONTROL
@@ -159,7 +159,7 @@ FILE
             LABEL_DO_STMT
               PsiElement(keyword)('do')
               PsiWhiteSpace(' ')
-              LABEL
+              LABEL_REF
                 PsiElement(integerliteral)('10')
               PsiWhiteSpace(' ')
               LOOP_CONTROL

@@ -302,15 +302,15 @@ FILE
                 PsiElement(integerliteral)('2')
             PsiElement())(')')
             PsiWhiteSpace(' ')
-            LABEL
+            LABEL_REF
               PsiElement(integerliteral)('10')
             PsiElement(,)(',')
             PsiWhiteSpace(' ')
-            LABEL
+            LABEL_REF
               PsiElement(integerliteral)('20')
             PsiElement(,)(',')
             PsiWhiteSpace(' ')
-            LABEL
+            LABEL_REF
               PsiElement(integerliteral)('30')
           PsiElement(eol)('\n')
           PsiWhiteSpace('    ')
@@ -348,7 +348,7 @@ FILE
           ASSIGN_STMT
             PsiElement(keyword)('assign')
             PsiWhiteSpace(' ')
-            LABEL
+            LABEL_REF
               PsiElement(integerliteral)('10')
             PsiWhiteSpace(' ')
             PsiElement(keyword)('to')
@@ -488,7 +488,7 @@ FILE
           GOTO_STMT
             PsiElement(keyword)('goto')
             PsiWhiteSpace(' ')
-            LABEL
+            LABEL_REF
               PsiElement(integerliteral)('10')
           PsiElement(eol)('\n')
           PsiWhiteSpace('    ')

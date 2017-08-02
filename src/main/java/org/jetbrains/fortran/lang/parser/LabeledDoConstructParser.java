@@ -41,7 +41,7 @@ public class LabeledDoConstructParser implements GeneratedParserUtilBase.Parser 
         PsiBuilder.Marker marker_ = enter_section_(builder, level, _NONE_, LABEL_DO_STMT, "<label do stmt>");
         consumeTokens(builder, 0, IDENTIFIER, COLON);
         result = parseKeyword(builder, level + 1, "DO");
-        int labelValue = new LabelParser().parseAndGetLabel(builder, level + 1);
+        int labelValue = new LabelParser().parseRefAndGetLabel(builder, level + 1);
         result = result && (labelValue == testLabel);
         pinned = result; // pin = 3
         result = result && report_error_(builder, loop_control(builder, level + 1));
@@ -60,7 +60,7 @@ public class LabeledDoConstructParser implements GeneratedParserUtilBase.Parser 
         parseLabel(builder, level+1);
         parseLoopName(builder, level+1);
         result = parseKeyword(builder, level + 1, "DO");
-        int labelValue = new LabelParser().parseAndGetLabel(builder, level + 1);
+        int labelValue = new LabelParser().parseRefAndGetLabel(builder, level + 1);
         result = result && (labelValue != -1);
         pinned = result; // pin = 3
         consumeToken(builder, COMMA);

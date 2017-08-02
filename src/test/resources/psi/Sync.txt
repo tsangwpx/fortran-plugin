@@ -59,7 +59,7 @@ FILE
       GOTO_STMT
         PsiElement(keyword)('goto')
         PsiWhiteSpace(' ')
-        LABEL
+        LABEL_REF
           PsiElement(integerliteral)('123')
       PsiElement(eol)('\n')
       COMPUTED_GOTO_STMT
@@ -99,13 +99,13 @@ FILE
                 PsiElement(identifier)('c')
         PsiElement())(')')
         PsiWhiteSpace(' ')
-        LABEL
+        LABEL_REF
           PsiElement(integerliteral)('1')
         PsiElement(,)(',')
-        LABEL
+        LABEL_REF
           PsiElement(integerliteral)('2')
         PsiElement(,)(',')
-        LABEL
+        LABEL_REF
           PsiElement(integerliteral)('3')
       PsiElement(eol)('\n')
       STOP_STMT
