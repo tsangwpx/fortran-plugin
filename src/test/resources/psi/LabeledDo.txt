@@ -28,10 +28,10 @@ FILE
         BLOCK
           PsiElement(eol)('\n')
           PsiWhiteSpace(' ')
-          NUMERICAL_LABEL_DECL
-            PsiElement(integerliteral)('1')
-          PsiWhiteSpace('      ')
           ASSIGNMENT_STMT
+            NUMERICAL_LABEL_DECL
+              PsiElement(integerliteral)('1')
+            PsiWhiteSpace('      ')
             DESIGNATOR
               DATA_PATH
                 FortranDataReferenceElementImpl(PATH)
@@ -43,11 +43,11 @@ FILE
               PsiElement(integerliteral)('3')
           PsiElement(eol)('\n')
           PsiWhiteSpace(' ')
-          NUMERICAL_LABEL_DECL
-            PsiElement(integerliteral)('3')
-          PsiWhiteSpace('      ')
           LABELED_DO_CONSTRUCT
             LABEL_DO_STMT
+              NUMERICAL_LABEL_DECL
+                PsiElement(integerliteral)('3')
+              PsiWhiteSpace('      ')
               PsiElement(keyword)('do')
               PsiWhiteSpace(' ')
               NUMERICAL_LABEL
@@ -91,26 +91,25 @@ FILE
                   PsiElement(integerliteral)('2')
               PsiElement(eol)('\n')
             PsiWhiteSpace(' ')
-            DO_TERM_ACTION_STMT
+            ASSIGNMENT_STMT
               NUMERICAL_LABEL_DECL
                 PsiElement(integerliteral)('100')
               PsiWhiteSpace('    ')
-              ASSIGNMENT_STMT
-                DESIGNATOR
-                  DATA_PATH
-                    FortranDataReferenceElementImpl(PATH)
-                      PsiElement(identifier)('cc')
-                PsiWhiteSpace(' ')
-                PsiElement(=)('=')
-                PsiWhiteSpace(' ')
-                CONSTANT
-                  PsiElement(integerliteral)('3')
+              DESIGNATOR
+                DATA_PATH
+                  FortranDataReferenceElementImpl(PATH)
+                    PsiElement(identifier)('cc')
+              PsiWhiteSpace(' ')
+              PsiElement(=)('=')
+              PsiWhiteSpace(' ')
+              CONSTANT
+                PsiElement(integerliteral)('3')
           PsiElement(eol)('\n')
           PsiWhiteSpace(' ')
-          NUMERICAL_LABEL_DECL
-            PsiElement(integerliteral)('2')
-          PsiWhiteSpace('      ')
           ASSIGNMENT_STMT
+            NUMERICAL_LABEL_DECL
+              PsiElement(integerliteral)('2')
+            PsiWhiteSpace('      ')
             DESIGNATOR
               DATA_PATH
                 FortranDataReferenceElementImpl(PATH)
