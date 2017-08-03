@@ -1,0 +1,32 @@
+package org.jetbrains.fortran.lang.resolve.ref
+
+import com.intellij.psi.PsiElement
+import com.intellij.psi.util.PsiTreeUtil
+import org.jetbrains.fortran.lang.psi.*
+import org.jetbrains.fortran.lang.psi.ext.FortranNamedElement
+
+
+class FortranNumericalLabelReferenceImpl(element: FortranNumericalLabel) :
+        FortranReferenceBase<FortranNumericalLabel>(element), FortranReference {
+
+    override val FortranNumericalLabel.referenceAnchor: PsiElement get() = integerliteral
+
+    override fun getVariants(): Array<Any> = emptyArray()
+
+    override fun resolveInner(): List<FortranNamedElement>  {
+        var psiElement : PsiElement = element
+       // find the root of the tree
+       while (psiElement !is FortranFile) psiElement = psiElement.parent
+
+       // find all labels in it
+       val tmp =PsiTreeUtil.findChildrenOfType(psiElement, FortranNumericalLabelDecl::class.java)
+               .filter {element.gelLabelValue() == it.gelLabelValue() }
+               .toMutableList()
+       return tmp
+   }
+
+  /*  override fun isReferenceTo(element: PsiElement) : Boolean {
+        System.out.println("isReferenceTo")
+        return super.isReferenceTo(element)
+    }*/
+}

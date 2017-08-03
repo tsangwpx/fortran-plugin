@@ -4,11 +4,9 @@ import com.intellij.lang.cacheBuilder.DefaultWordsScanner
 import com.intellij.lang.cacheBuilder.WordsScanner
 import com.intellij.lang.findUsages.FindUsagesProvider
 import com.intellij.psi.PsiElement
-import com.intellij.psi.PsiNamedElement
 import com.intellij.psi.tree.TokenSet
-import org.jetbrains.fortran.lang.FortranTypes
 import org.jetbrains.fortran.lang.lexer.FortranLexer
-import org.jetbrains.fortran.lang.psi.FortranLabel
+import org.jetbrains.fortran.lang.psi.FortranNumericalLabel
 import org.jetbrains.fortran.lang.psi.FortranTokenType
 
 class FortranFindUsagesProvider : FindUsagesProvider {
@@ -18,7 +16,7 @@ class FortranFindUsagesProvider : FindUsagesProvider {
                 , FortranTokenType.COMMENTS, TokenSet.EMPTY)
     }
     override fun canFindUsagesFor(psiElement: PsiElement): Boolean {
-        return psiElement is FortranLabel
+        return psiElement is FortranNumericalLabel
     }
 
     override fun getHelpId(psiElement: PsiElement): String? {
@@ -26,7 +24,7 @@ class FortranFindUsagesProvider : FindUsagesProvider {
     }
 
     override fun getType(element: PsiElement): String {
-        if (element is FortranLabel) {
+        if (element is FortranNumericalLabel) {
             return "fortran label"
         } else {
             return ""
@@ -34,7 +32,7 @@ class FortranFindUsagesProvider : FindUsagesProvider {
     }
 
     override fun getDescriptiveName(element: PsiElement): String {
-        if (element is FortranLabel) {
+        if (element is FortranNumericalLabel) {
             return element.text
         } else {
             return ""
@@ -42,7 +40,7 @@ class FortranFindUsagesProvider : FindUsagesProvider {
     }
 
     override fun getNodeText(element: PsiElement, useFullName: Boolean): String {
-        if (element is FortranLabel) {
+        if (element is FortranNumericalLabel) {
             return element.text
         } else {
             return ""

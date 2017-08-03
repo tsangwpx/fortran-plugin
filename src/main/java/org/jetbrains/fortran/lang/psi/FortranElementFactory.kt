@@ -11,9 +11,14 @@ object FortranElementFactory {
         return file.getFirstChild() as FortranDataReferenceElement
     }
 
-    fun createFortranLabel(project: Project, name: String): FortranLabel {
+    fun createFortranNumericalLabelDecl(project: Project, name: String): FortranNumericalLabelDecl {
         val file = createFile(project, name)
-        return file.getFirstChild() as FortranLabel
+        return file.getFirstChild() as FortranNumericalLabelDecl
+    }
+
+    fun createFortranNumericalLabel(project: Project, name: String): FortranNumericalLabel {
+        val file = createFile(project, name)
+        return file.getFirstChild() as FortranNumericalLabel
     }
 
     fun createFile(project: Project, text: String): FortranFile {

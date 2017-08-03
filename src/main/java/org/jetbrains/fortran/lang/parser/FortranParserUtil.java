@@ -2,7 +2,6 @@ package org.jetbrains.fortran.lang.parser;
 
 import com.intellij.lang.PsiBuilder;
 import com.intellij.lang.parser.GeneratedParserUtilBase;
-import com.intellij.psi.tree.IElementType;
 
 /**
  * Created by Sergei on 13.04.17.
@@ -19,12 +18,12 @@ public class FortranParserUtil extends GeneratedParserUtilBase {
         return new KeywordParser(keyword).parse(builder_, level_);
     }
 
-    public static boolean parseLabel(PsiBuilder builder_, int level_) {
+    public static boolean parseNumericalLabelDecl(PsiBuilder builder_, int level_) {
         return new LabelParser().parse(builder_, level_);
     }
 
-    public static boolean parseLabelRef(PsiBuilder builder_, int level_) {
-        return new LabelParser().parseRef(builder_, level_);
+    public static boolean parseNumericalLabel(PsiBuilder builder_, int level_) {
+        return new LabelParser().parseLabel(builder_, level_);
     }
 
     public static boolean parseLabeledDoConstruct(PsiBuilder builder_, int level_) {

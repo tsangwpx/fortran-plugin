@@ -9,9 +9,7 @@ import static org.jetbrains.fortran.lang.FortranTypes.COLON;
 import static org.jetbrains.fortran.lang.parser.FortranParser.end_do;
 import static org.jetbrains.fortran.lang.parser.FortranParser.execution_part_construct;
 import static org.jetbrains.fortran.lang.parser.FortranParser.loop_control;
-import static org.jetbrains.fortran.lang.parser.FortranParserUtil.parseIdentifier;
-import static org.jetbrains.fortran.lang.parser.FortranParserUtil.parseKeyword;
-import static org.jetbrains.fortran.lang.parser.FortranParserUtil.parseLabel;
+import static org.jetbrains.fortran.lang.parser.FortranParserUtil.*;
 import static org.jetbrains.fortran.lang.psi.FortranTokenType.KEYWORD;
 import static org.jetbrains.fortran.lang.psi.FortranTokenType.WORD;
 
@@ -57,7 +55,7 @@ public class LabeledDoConstructParser implements GeneratedParserUtilBase.Parser 
         if (!nextTokenIs(builder, "<label do stmt>", WORD, KEYWORD, IDENTIFIER, INTEGERLITERAL)) return -1;
         boolean result, pinned;
         PsiBuilder.Marker marker_ = enter_section_(builder, level, _NONE_, LABEL_DO_STMT, "<label do stmt>");
-        parseLabel(builder, level+1);
+        parseNumericalLabelDecl(builder, level+1);
         parseLoopName(builder, level+1);
         result = parseKeyword(builder, level + 1, "DO");
         int labelValue = new LabelParser().parseRefAndGetLabel(builder, level + 1);

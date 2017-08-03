@@ -8,7 +8,7 @@ FILE
     PsiWhiteSpace('  ')
     BLOCK
       ASSIGNMENT_STMT
-        LABEL
+        NUMERICAL_LABEL_DECL
           PsiElement(integerliteral)('1')
         PsiWhiteSpace('  ')
         DESIGNATOR

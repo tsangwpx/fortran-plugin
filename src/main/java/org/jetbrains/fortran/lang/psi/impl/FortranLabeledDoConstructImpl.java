@@ -41,11 +41,11 @@ public class FortranLabeledDoConstructImpl extends FortranExecutableConstructImp
     @Nullable
     @Override
     public FortranLabeledDoConstruct getLabeledDoTermConstract() {
-        int label = getLabelDoStmt().getLabel().gelLabelValue();
+        int label = getLabelDoStmt().getNumericalLabel().gelLabelValue();
 
         for (PsiElement cur = getFirstChild(); cur != null; cur = cur.getNextSibling()) {
             if (FortranLabeledDoConstruct.class.isInstance(cur)
-                    && ((FortranLabeledDoConstruct)cur).getLabelDoStmt().getLabel().gelLabelValue() == label)
+                    && ((FortranLabeledDoConstruct)cur).getLabelDoStmt().getNumericalLabel().gelLabelValue() == label)
                 return (FortranLabeledDoConstruct)cur;
         }
         return null;

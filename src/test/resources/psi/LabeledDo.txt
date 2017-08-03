@@ -11,7 +11,7 @@ FILE
         LABEL_DO_STMT
           PsiElement(keyword)('do')
           PsiWhiteSpace(' ')
-          LABEL_REF
+          NUMERICAL_LABEL
             PsiElement(integerliteral)('10')
           PsiWhiteSpace(' ')
           LOOP_CONTROL
@@ -28,7 +28,7 @@ FILE
         BLOCK
           PsiElement(eol)('\n')
           PsiWhiteSpace(' ')
-          LABEL
+          NUMERICAL_LABEL_DECL
             PsiElement(integerliteral)('1')
           PsiWhiteSpace('      ')
           ASSIGNMENT_STMT
@@ -43,14 +43,14 @@ FILE
               PsiElement(integerliteral)('3')
           PsiElement(eol)('\n')
           PsiWhiteSpace(' ')
-          LABEL
+          NUMERICAL_LABEL_DECL
             PsiElement(integerliteral)('3')
           PsiWhiteSpace('      ')
           LABELED_DO_CONSTRUCT
             LABEL_DO_STMT
               PsiElement(keyword)('do')
               PsiWhiteSpace(' ')
-              LABEL_REF
+              NUMERICAL_LABEL
                 PsiElement(integerliteral)('100')
               PsiWhiteSpace(' ')
               LOOP_CONTROL
@@ -92,7 +92,7 @@ FILE
               PsiElement(eol)('\n')
             PsiWhiteSpace(' ')
             DO_TERM_ACTION_STMT
-              LABEL
+              NUMERICAL_LABEL_DECL
                 PsiElement(integerliteral)('100')
               PsiWhiteSpace('    ')
               ASSIGNMENT_STMT
@@ -107,7 +107,7 @@ FILE
                   PsiElement(integerliteral)('3')
           PsiElement(eol)('\n')
           PsiWhiteSpace(' ')
-          LABEL
+          NUMERICAL_LABEL_DECL
             PsiElement(integerliteral)('2')
           PsiWhiteSpace('      ')
           ASSIGNMENT_STMT
@@ -126,7 +126,7 @@ FILE
           LABEL_DO_STMT
             PsiElement(keyword)('do')
             PsiWhiteSpace(' ')
-            LABEL_REF
+            NUMERICAL_LABEL
               PsiElement(integerliteral)('10')
             PsiWhiteSpace(' ')
             LOOP_CONTROL
@@ -159,7 +159,7 @@ FILE
             LABEL_DO_STMT
               PsiElement(keyword)('do')
               PsiWhiteSpace(' ')
-              LABEL_REF
+              NUMERICAL_LABEL
                 PsiElement(integerliteral)('10')
               PsiWhiteSpace(' ')
               LOOP_CONTROL
@@ -189,14 +189,14 @@ FILE
               PsiElement(eol)('\n')
             PsiWhiteSpace(' ')
             END_DO_STMT
-              LABEL
+              NUMERICAL_LABEL_DECL
                 PsiElement(integerliteral)('10')
               PsiWhiteSpace('       ')
               PsiElement(keyword)('enddo')
       PsiElement(eol)('\n')
       PsiWhiteSpace(' ')
       ASSIGNMENT_STMT
-        LABEL
+        NUMERICAL_LABEL_DECL
           PsiElement(integerliteral)('11')
         PsiWhiteSpace('   ')
         DESIGNATOR

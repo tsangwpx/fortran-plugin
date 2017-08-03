@@ -6,27 +6,28 @@ import com.intellij.lang.parser.GeneratedParserUtilBase;
 import static com.intellij.lang.parser.GeneratedParserUtilBase.*;
 import static java.lang.Integer.parseInt;
 import static org.jetbrains.fortran.lang.FortranTypes.INTEGERLITERAL;
-import static org.jetbrains.fortran.lang.FortranTypes.LABEL;
-import static org.jetbrains.fortran.lang.FortranTypes.LABEL_REF;
+import static org.jetbrains.fortran.lang.FortranTypes.NUMERICAL_LABEL;
+import static org.jetbrains.fortran.lang.FortranTypes.NUMERICAL_LABEL_DECL;
 
 public class LabelParser implements GeneratedParserUtilBase.Parser {
 
     @Override
     public boolean parse(final PsiBuilder builder_, final int level_) {
-        return parseLabelOrRef(builder_, level_, false);
+        return parseLabelOrDecl(builder_, level_, false); // declaration
     }
 
-    public boolean parseRef(final PsiBuilder builder_, final int level_) {
-        return parseLabelOrRef(builder_, level_, true);
+    public boolean parseLabel(final PsiBuilder builder_, final int level_) {
+        return parseLabelOrDecl(builder_, level_, true); // reference
     }
 
-    private boolean parseLabelOrRef(final PsiBuilder builder_, final int level_, boolean isRef) {
+
+    private boolean parseLabelOrDecl(final PsiBuilder builder_, final int level_, boolean isLabel) {
         if (!recursion_guard_(builder_, level_, "label")) return false;
         if (!nextTokenIs(builder_, INTEGERLITERAL)) return false;
         boolean result_;
         PsiBuilder.Marker marker_ = enter_section_(builder_);
         result_ = consumeToken(builder_, INTEGERLITERAL);
-        exit_section_(builder_, marker_, isRef ? LABEL_REF : LABEL, result_);
+        exit_section_(builder_, marker_, isLabel ? NUMERICAL_LABEL : NUMERICAL_LABEL_DECL, result_);
         return result_;
     }
 
@@ -39,7 +40,7 @@ public class LabelParser implements GeneratedParserUtilBase.Parser {
         int labelValue = -1;
         if (text != null) labelValue = parseInt(text);
         result_ = consumeToken(builder_, INTEGERLITERAL);
-        exit_section_(builder_, marker_, LABEL_REF, result_);
+        exit_section_(builder_, marker_, NUMERICAL_LABEL, result_);
         if (!result_) return -1;
         return labelValue;
     }
@@ -53,7 +54,7 @@ public class LabelParser implements GeneratedParserUtilBase.Parser {
         int labelValue = -1;
         if (text != null) labelValue = parseInt(text);
         result_ = (labelValue != value) && consumeToken(builder_, INTEGERLITERAL);
-        exit_section_(builder_, marker_, LABEL, result_);
+        exit_section_(builder_, marker_, NUMERICAL_LABEL_DECL, result_);
         return result_;
     }
 }
