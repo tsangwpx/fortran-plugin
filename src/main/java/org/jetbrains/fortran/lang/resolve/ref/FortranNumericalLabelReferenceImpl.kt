@@ -4,12 +4,14 @@ import com.intellij.psi.PsiElement
 import com.intellij.psi.util.PsiTreeUtil
 import org.jetbrains.fortran.lang.psi.*
 import org.jetbrains.fortran.lang.psi.ext.FortranNamedElement
+import org.jetbrains.fortran.lang.psi.impl.FortranNumericalLabelDeclImpl
+import org.jetbrains.fortran.lang.psi.impl.FortranNumericalLabelImplMixin
 
 
-class FortranNumericalLabelReferenceImpl(element: FortranNumericalLabel) :
-        FortranReferenceBase<FortranNumericalLabel>(element), FortranReference {
+class FortranNumericalLabelReferenceImpl(element: FortranNumericalLabelImplMixin) :
+        FortranReferenceBase<FortranNumericalLabelImplMixin>(element), FortranReference {
 
-    override val FortranNumericalLabel.referenceAnchor: PsiElement get() = integerliteral
+    override val FortranNumericalLabelImplMixin.referenceAnchor: PsiElement get() = integerliteral
 
     override fun getVariants(): Array<Any> = emptyArray()
 
@@ -19,7 +21,7 @@ class FortranNumericalLabelReferenceImpl(element: FortranNumericalLabel) :
        while (psiElement !is FortranFile) psiElement = psiElement.parent
 
        // find all labels in it
-       val tmp =PsiTreeUtil.findChildrenOfType(psiElement, FortranNumericalLabelDecl::class.java)
+       val tmp =PsiTreeUtil.findChildrenOfType(psiElement, FortranNumericalLabelDeclImpl::class.java)
                .filter {element.gelLabelValue() == it.gelLabelValue() }
                .toMutableList()
        return tmp

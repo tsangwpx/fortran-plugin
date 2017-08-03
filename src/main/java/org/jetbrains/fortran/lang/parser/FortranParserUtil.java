@@ -18,14 +18,6 @@ public class FortranParserUtil extends GeneratedParserUtilBase {
         return new KeywordParser(keyword).parse(builder_, level_);
     }
 
-    public static boolean parseNumericalLabelDecl(PsiBuilder builder_, int level_) {
-        return new LabelParser().parse(builder_, level_);
-    }
-
-    public static boolean parseNumericalLabel(PsiBuilder builder_, int level_) {
-        return new LabelParser().parseLabel(builder_, level_);
-    }
-
     public static boolean parseLabeledDoConstruct(PsiBuilder builder_, int level_) {
         return new LabeledDoConstructParser().parse(builder_, level_);
     }

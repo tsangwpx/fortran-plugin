@@ -13,5 +13,6 @@ abstract class FortranNumericalLabelImplMixin(node : ASTNode) : FortranComposite
 
         override fun getReference(): FortranReference = FortranNumericalLabelReferenceImpl(this)
 
+        fun gelLabelValue() = integerliteral.text.toInt()
 }
 

@@ -17,8 +17,6 @@ public class FortranManualPsiElementFactory {
             return new FortranLabeledDoConstructImpl(node);
         } else if (type == FortranTypes.LABEL_DO_STMT) {
             return new FortranLabelDoStmtImpl(node);
-        } else if (type == FortranTypes.DO_TERM_ACTION_STMT) {
-            return new FortranDoTermActionStmtImpl(node);
         }
 
         return null;

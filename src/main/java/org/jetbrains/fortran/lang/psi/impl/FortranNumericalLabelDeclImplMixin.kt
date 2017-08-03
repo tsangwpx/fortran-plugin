@@ -11,4 +11,6 @@ abstract class FortranNumericalLabelDeclImplMixin(node : ASTNode) : FortranNamed
     override fun setName(name: String): PsiElement? {
         return this
     }
+
+    fun gelLabelValue() = integerliteral.text.toInt()
 }
