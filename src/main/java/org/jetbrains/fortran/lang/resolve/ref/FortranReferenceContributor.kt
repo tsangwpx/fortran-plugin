@@ -18,13 +18,8 @@ import org.jetbrains.fortran.lang.psi.ext.FortranReferenceElement
 
 
 class FortranReferenceContributor : PsiReferenceContributor() {
-    init {
-        System.out.println("FortranReferenceContributor Init")
-    }
-
     override fun registerReferenceProviders(registrar: PsiReferenceRegistrar) {
         registrar.registerReferenceProvider(PlatformPatterns.psiElement(FortranTypes.IDENTIFIER), DataReferenceProvider())
-        System.out.println("Something must be registered in the FortranReferenceContributor")
     }
 
     private abstract class ReferenceProvider : PsiReferenceProvider() {

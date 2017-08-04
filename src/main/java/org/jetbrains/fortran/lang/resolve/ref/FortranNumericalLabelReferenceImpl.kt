@@ -26,9 +26,4 @@ class FortranNumericalLabelReferenceImpl(element: FortranNumericalLabelImplMixin
                .toMutableList()
        return tmp
    }
-
-  /*  override fun isReferenceTo(element: PsiElement) : Boolean {
-        System.out.println("isReferenceTo")
-        return super.isReferenceTo(element)
-    }*/
 }
