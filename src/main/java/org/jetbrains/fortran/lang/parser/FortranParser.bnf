@@ -330,6 +330,14 @@ numerical_label ::= integerliteral {
     implements=['org.jetbrains.fortran.lang.psi.ext.FortranReferenceElement']
     mixin='org.jetbrains.fortran.lang.psi.impl.FortranNumericalLabelImplMixin'
 }
+construct_label_decl ::= fidentifier  ':' {
+    implements=['org.jetbrains.fortran.lang.psi.ext.FortranNamedElement']
+    mixin='org.jetbrains.fortran.lang.psi.impl.FortranConstructLabelDeclImplMixin'
+}
+construct_label ::= fidentifier {
+    implements=['org.jetbrains.fortran.lang.psi.ext.FortranReferenceElement']
+    mixin='org.jetbrains.fortran.lang.psi.impl.FortranConstructLabelImplMixin'
+}
 // Clause 4
 // R401
 private type_param_value ::= '*' | ':' | expr
@@ -732,19 +740,19 @@ where_stmt ::= numerical_label_decl? where_ '(' expr ')' assignment_stmt { pin =
 where_construct ::= where_construct_stmt eol+ block (masked_elsewhere_stmt eol+ block)*
                     (elsewhere_stmt eol+ block)? end_where_stmt { pin = 1; extends=executable_construct }
 // R743
-where_construct_stmt ::= numerical_label_decl? (fidentifier ':')? where_ '(' expr ')'
+where_construct_stmt ::= numerical_label_decl? construct_label_decl? where_ '(' expr ')'
 // R744
 // R745, R746 are trivial
 // R747
-masked_elsewhere_stmt ::= numerical_label_decl? ((else_ where_) | elsewhere_) '(' expr ')' fidentifier? { pin = 3 }
+masked_elsewhere_stmt ::= numerical_label_decl? ((else_ where_) | elsewhere_) '(' expr ')' construct_label? { pin = 3 }
 // R748
-elsewhere_stmt ::= numerical_label_decl? ((else_ where_) | elsewhere_) fidentifier? { pin = 3 }
+elsewhere_stmt ::= numerical_label_decl? ((else_ where_) | elsewhere_) construct_label? { pin = 3 }
 // R749
-end_where_stmt ::= numerical_label_decl? ((end_ where_) | endwhere_) fidentifier? { pin = 2 }
+end_where_stmt ::= numerical_label_decl? ((end_ where_) | endwhere_) construct_label? { pin = 2 }
 // R750
 forall_construct ::= forall_construct_stmt eol+ block end_forall_stmt { pin = 1; extends=executable_construct }
 // R751
-forall_construct_stmt ::= numerical_label_decl? (fidentifier ':')? forall_ forall_header
+forall_construct_stmt ::= numerical_label_decl? construct_label_decl? forall_ forall_header
 // R752
 forall_header ::= '(' (type_spec '::')? <<list forall_triplet_spec>> (',' expr)? ')' {pin=1}
 // R753 + 754 + 755
@@ -753,7 +761,7 @@ forall_triplet_spec ::= fidentifier '=' expr ':' expr (':' expr)? {pin=2}
 // R757
 private forall_assignment_stmt ::= assignment_stmt | pointer_assignment_stmt
 // R758
-end_forall_stmt ::= numerical_label_decl? ((end_ forall_) | endforall_) fidentifier? { pin = 2 }
+end_forall_stmt ::= numerical_label_decl? ((end_ forall_) | endforall_) construct_label? { pin = 2 }
 // R759
 forall_stmt ::= numerical_label_decl? forall_ forall_header forall_assignment_stmt { pin = 4 }
 
@@ -764,25 +772,25 @@ block ::= (eol | execution_part_construct)*
 // R802
 associate_construct ::= associate_stmt eol+ block end_associate_stmt { pin = 1; extends=executable_construct }
 // R803
-associate_stmt ::= numerical_label_decl? (fidentifier ':')? associate_ <<list association>> { pin = 3 }
+associate_stmt ::= numerical_label_decl? construct_label_decl? associate_ <<list association>> { pin = 3 }
 // R804
 association ::= fidentifier '=>' selector { pin = 2 }
 // R805
 private selector ::= expr | variable
 // R806
-end_associate_stmt ::= numerical_label_decl? ((end_ associate_) | endassociate_) (fidentifier)? { pin = 2 }
+end_associate_stmt ::= numerical_label_decl? ((end_ associate_) | endassociate_) construct_label? { pin = 2 }
 // R807
 block_construct ::= block_stmt eol+ block end_block_stmt { pin = 1; extends=executable_construct }
 // R808
-block_stmt ::= numerical_label_decl? (fidentifier ':')? block_
+block_stmt ::= numerical_label_decl? construct_label? block_
 // R809
-end_block_stmt ::= numerical_label_decl? ((end_ block_) | endblock_) (fidentifier)? {pin = 2 }
+end_block_stmt ::= numerical_label_decl? ((end_ block_) | endblock_) construct_label? {pin = 2 }
 // R810
 critical_construct ::= critical_stmt eol+ block end_critical_stmt { pin = 1; extends=executable_construct }
 // R811
-critical_stmt ::= numerical_label_decl? (fidentifier ':')? critical_ { pin = 3 }
+critical_stmt ::= numerical_label_decl? construct_label_decl? critical_ { pin = 3 }
 // R812
-end_critical_stmt ::= numerical_label_decl? ((end_ critical_) | endcritical_) (fidentifier)? { pin = 2 }
+end_critical_stmt ::= numerical_label_decl? ((end_ critical_) | endcritical_) construct_label { pin = 2 }
 // R813 simplified compared to standard
 external labeled_do_construct ::= parseLabeledDoConstruct
 // R814
@@ -791,7 +799,7 @@ nonlabel_do_construct ::= nonlabel_do_stmt eol+ block end_do { pin = 1; extends=
 // R816
 //label_do_stmt ::= (identifier ':')? do label loop_control? { pin = 3 }
 // R817
-nonlabel_do_stmt ::= numerical_label_decl? (fidentifier ':')? do_ loop_control? { pin = 3 }
+nonlabel_do_stmt ::= numerical_label_decl? construct_label_decl? do_ loop_control? { pin = 3 }
 // R818
 loop_control ::= while_loop_stmt | concurrent_loop_stmt | id_loop_stmt
 private id_loop_stmt ::= variable '=' expr ',' expr (',' expr)? {pin=1}
@@ -801,30 +809,30 @@ private concurrent_loop_stmt ::= concurrent_ forall_header {pin = 1}
 // R821
 private end_do ::= end_do_stmt //| continue at the end of a loop is f77 specific feature
 // R822
-end_do_stmt ::= numerical_label_decl? (end_ do_ | enddo_) fidentifier? { pin = 2}
+end_do_stmt ::= numerical_label_decl? (end_ do_ | enddo_) construct_label? { pin = 2}
 // R823 - 830 are parsed manually
 // R831
 cycle_stmt ::= numerical_label_decl? cycle_ (fidentifier)? { pin = 2 }
 // R832
 if_construct ::= if_then_stmt eol+ block (else_if_stmt eol+ block)* (else_stmt eol+ block)? end_if_stmt { pin = 1; extends=executable_construct }
 // R833
-if_then_stmt ::= numerical_label_decl? (fidentifier ':')? if_ '(' expr ')' then_ { pin = 3 }
+if_then_stmt ::= numerical_label_decl? construct_label_decl? if_ '(' expr ')' then_ { pin = 3 }
 // R834
-else_if_stmt ::= numerical_label_decl? ((else_ if_)|elseif_) '(' expr ')' then_ fidentifier? { pin = 2 }
+else_if_stmt ::= numerical_label_decl? ((else_ if_)|elseif_) '(' expr ')' then_ construct_label? { pin = 2 }
 // R835
-else_stmt ::= numerical_label_decl? else_ fidentifier? { pin = 2 }
+else_stmt ::= numerical_label_decl? else_ construct_label? { pin = 2 }
 // R836
-end_if_stmt ::= numerical_label_decl? ((end_ if_)|endif_) fidentifier? { pin = 2 }
+end_if_stmt ::= numerical_label_decl? ((end_ if_)|endif_) construct_label? { pin = 2 }
 // R837
 if_stmt ::= numerical_label_decl? if_ '(' expr ')' action_stmt {pin=6}
 // R838
 case_construct ::= select_case_stmt eol+ (case_stmt eol+ block)* end_select_stmt { pin = 1; extends=executable_construct }
 // R839
-select_case_stmt ::= numerical_label_decl? (fidentifier ':')? select_ case_ '(' expr ')' { pin = 4 }
+select_case_stmt ::= numerical_label_decl? construct_label_decl? select_ case_ '(' expr ')' { pin = 4 }
 // R840
-case_stmt ::= numerical_label_decl? case_ case_selector (fidentifier)? { pin = 2 }
+case_stmt ::= numerical_label_decl? case_ case_selector construct_label? { pin = 2 }
 // R841
-end_select_stmt ::= numerical_label_decl? ((end_ select_) | endselect_ ) (fidentifier)? { pin = 2 }
+end_select_stmt ::= numerical_label_decl? ((end_ select_) | endselect_ ) construct_label? { pin = 2 }
 // R842 is trivial
 // R843
 case_selector ::= ('(' <<list case_value_range>> ')') | default_
@@ -834,9 +842,9 @@ case_value_range ::= (expr ':' expr) | (expr ':') | expr | (':' expr)
 // R846
 select_type_construct ::= select_type_stmt eol+ (type_guard_stmt eol+ block)* end_select_stmt { pin = 1; extends=executable_construct }
 // R847
-select_type_stmt ::= numerical_label_decl? (fidentifier ':')? select_ type_ '(' (fidentifier '=>')? selector ')' { pin = 4 }
+select_type_stmt ::= numerical_label_decl? construct_label_decl? select_ type_ '(' (fidentifier '=>')? selector ')' { pin = 4 }
 // R848
-type_guard_stmt ::= (typeis_guard | classis_guard | classdefault_guard) fidentifier? { pin = 1 }
+type_guard_stmt ::= (typeis_guard | classis_guard | classdefault_guard) construct_label? { pin = 1 }
 private typeis_guard ::= type_ is_ '(' type_spec ')' { pin = 1 }
 private classis_guard ::= class_ is_ '(' derived_type_spec ')' { pin = 2 }
 private classdefault_guard ::= class_ default_ { pin = 2 }

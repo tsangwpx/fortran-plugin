@@ -6,10 +6,12 @@ import com.intellij.lang.findUsages.FindUsagesProvider
 import com.intellij.psi.PsiElement
 import com.intellij.psi.tree.TokenSet
 import org.jetbrains.fortran.lang.lexer.FortranLexer
-import org.jetbrains.fortran.lang.psi.FortranNumericalLabel
+import org.jetbrains.fortran.lang.psi.FortranConstructLabelDecl
 import org.jetbrains.fortran.lang.psi.FortranNumericalLabelDecl
 import org.jetbrains.fortran.lang.psi.FortranTokenType
 import org.jetbrains.fortran.lang.psi.ext.FortranNamedElement
+import org.jetbrains.fortran.lang.psi.impl.FortranConstructLabelDeclImplMixin
+
 
 class FortranFindUsagesProvider : FindUsagesProvider {
     override fun getWordsScanner(): WordsScanner? {
@@ -27,6 +29,8 @@ class FortranFindUsagesProvider : FindUsagesProvider {
     override fun getType(element: PsiElement): String {
         if (element is FortranNumericalLabelDecl) {
             return "Fortran numerical label"
+        } else if (element is FortranConstructLabelDecl) {
+            return "Constract name"
         } else {
             return ""
         }
@@ -35,7 +39,9 @@ class FortranFindUsagesProvider : FindUsagesProvider {
     override fun getDescriptiveName(element: PsiElement): String {
         if (element is FortranNumericalLabelDecl) {
             return element.text
-        } else {
+        } else if (element is FortranConstructLabelDeclImplMixin) {
+            return element.gelLabelValue()
+        }else {
             return ""
         }
     }
@@ -43,7 +49,9 @@ class FortranFindUsagesProvider : FindUsagesProvider {
     override fun getNodeText(element: PsiElement, useFullName: Boolean): String {
         if (element is FortranNumericalLabelDecl) {
             return element.parent.text
-        } else {
+        } else if (element is FortranConstructLabelDeclImplMixin) {
+            return element.parent.text
+        }else {
             return ""
         }
     }
