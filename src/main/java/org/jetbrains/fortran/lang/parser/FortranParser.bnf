@@ -782,7 +782,7 @@ end_associate_stmt ::= numerical_label_decl? ((end_ associate_) | endassociate_)
 // R807
 block_construct ::= block_stmt eol+ block end_block_stmt { pin = 1; extends=executable_construct }
 // R808
-block_stmt ::= numerical_label_decl? construct_label? block_
+block_stmt ::= numerical_label_decl? construct_label_decl? block_
 // R809
 end_block_stmt ::= numerical_label_decl? ((end_ block_) | endblock_) construct_label? {pin = 2 }
 // R810

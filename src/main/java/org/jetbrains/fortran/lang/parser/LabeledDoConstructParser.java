@@ -36,7 +36,7 @@ public class LabeledDoConstructParser implements GeneratedParserUtilBase.Parser 
         if (!nextTokenIs(builder, "<label do stmt>", WORD, KEYWORD, IDENTIFIER)) return false;
         boolean result, pinned=false;
         PsiBuilder.Marker marker_ = enter_section_(builder, level, _NONE_, LABEL_DO_STMT, "<label do stmt>");
-        consumeTokens(builder, 0, IDENTIFIER, COLON);
+        construct_label_decl(builder, level+1);
         result = parseKeyword(builder, level + 1, "DO");
         // The label must be here
         if (!nextTokenIs(builder, INTEGERLITERAL)) {
@@ -62,7 +62,7 @@ public class LabeledDoConstructParser implements GeneratedParserUtilBase.Parser 
         int labelValue = -1;
         PsiBuilder.Marker marker_ = enter_section_(builder, level, _NONE_, LABEL_DO_STMT, "<label do stmt>");
         numerical_label_decl(builder, level+1);
-        parseLoopName(builder, level+1);
+        construct_label_decl(builder, level+1);
         result = parseKeyword(builder, level + 1, "DO");
         // The label must be here
         if (!nextTokenIs(builder, INTEGERLITERAL)) {
@@ -79,15 +79,6 @@ public class LabeledDoConstructParser implements GeneratedParserUtilBase.Parser 
         exit_section_(builder, level, marker_, result, pinned, null);
         if (!(result || pinned)) return -1;
         return labelValue;
-    }
-
-    private static void parseLoopName(PsiBuilder builder, int level) {
-        if (!recursion_guard_(builder, level, "parseLoopName")) return;
-        boolean result;
-        PsiBuilder.Marker marker = enter_section_(builder);
-        result = parseIdentifier(builder, level + 1);
-        result = result && consumeToken(builder, COLON);
-        exit_section_(builder, marker, null, result);
     }
 
 //
