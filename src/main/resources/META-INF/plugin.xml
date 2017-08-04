@@ -54,9 +54,14 @@
         <psi.referenceContributor implementation="org.jetbrains.fortran.lang.resolve.ref.FortranReferenceContributor"/>
         <gotoSymbolContributor implementation="org.jetbrains.fortran.lang.resolve.ref.FortranChooseByNameContributor"/>
         <lang.findUsagesProvider language="Fortran" implementationClass="org.jetbrains.fortran.lang.resolve.ref.FortranFindUsagesProvider"/>
-
+        <usageTypeProvider implementation="org.jetbrains.fortran.lang.resolve.ref.FortranUsageTypeProvider"/>
         <!-- Indices -->
         <stubIndex implementation="org.jetbrains.fortran.lang.core.stubs.index.FortranNamedElementIndex"/>
+
+        <!-- Refactoring -->
+
+        <lang.namesValidator language="Fortran" implementationClass="org.jetbrains.fortran.ide.refactoring.FortranNamesValidator"/>
+
     </extensions>
 
     <actions>

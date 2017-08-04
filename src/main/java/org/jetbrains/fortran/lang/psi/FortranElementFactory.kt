@@ -6,6 +6,11 @@ import org.jetbrains.fortran.FortranFileType
 
 
 object FortranElementFactory {
+    fun createIdentifier(project: Project, name: String): PsiElement {
+        val file = createFile(project, name)
+        return file.firstChild
+    }
+
     fun createFortranDataReferenceElement(project: Project, name: String): FortranDataReferenceElement {
         val file = createFile(project, name)
         return file.getFirstChild() as FortranDataReferenceElement
