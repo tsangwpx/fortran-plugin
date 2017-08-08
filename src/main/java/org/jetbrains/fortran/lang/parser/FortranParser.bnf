@@ -251,6 +251,9 @@ private program ::=  (eol | program_unit)*
 program_unit ::= !<<eof>> (external_subprogram | module | submodule | block_data | include_stmt | main_program ) {
   pin = 1
   recoverWhile = program_unit_recover
+  stubClass = 'org.jetbrains.fortran.lang.core.stubs.FortranProgramUnitStub'
+  mixin = 'org.jetbrains.fortran.lang.psi.ext.FortranProgramUnitImplMixin'
+  elementTypeFactory ='org.jetbrains.fortran.lang.core.stubs.FortranStubFactoryKt.fortranStubFactory'
 }
 private program_unit_recover ::= !(eol | end_unit_keys)
 private end_unit_keys ::= !assignment_stmt (label_decl? (end_ | endprogram_ | endmodule_
@@ -934,7 +937,9 @@ private format_item ::= dataedit | control_edit | string_literal | (integerliter
 control_edit ::= ":" | (integerliteral? '/') | (signed_int_literal dataedit)
 // Clause 11
 // R1101
-main_program ::= (program_stmt_with_eol)? block internal_subprogram_part? end_program_stmt { pin = 1; extends = program_unit}
+main_program ::= (program_stmt_with_eol)? block internal_subprogram_part? end_program_stmt {
+pin = 1; extends = program_unit;
+}
 private program_stmt_with_eol ::= program_stmt eol+ {pin = 1}
 // R1102 +
 program_stmt ::= label_decl? program_ fidentifier { pin = 2 }
