@@ -6,9 +6,8 @@ import com.intellij.psi.tree.IElementType;
 import org.jetbrains.fortran.lang.FortranTypes;
 import org.jetbrains.fortran.lang.psi.impl.*;
 
-import static org.jetbrains.fortran.lang.psi.LabelDoStmt.LABEL_DO_STMT;
-
-//import static org.jetbrains.fortran.lang.parser.LabelDoStmtType.LABEL_DO_STMT;
+import static org.jetbrains.fortran.lang.psi.LabelDo.LABEL_DO_STMT;
+import static org.jetbrains.fortran.lang.psi.LabelDo.LABELED_DO_CONSTRUCT;
 
 public class FortranManualPsiElementFactory {
     public static PsiElement createElement(ASTNode node) {
@@ -17,7 +16,7 @@ public class FortranManualPsiElementFactory {
             return new FortranLabelImpl(node);
         } else if (type == FortranTypes.LABEL_DECL) {
             return new FortranLabelDeclImpl(node);
-        }else if (type == FortranTypes.LABELED_DO_CONSTRUCT) {
+        }else if (type == LABELED_DO_CONSTRUCT) {
             return new FortranLabeledDoConstructImpl(node);
         } else if (type == LABEL_DO_STMT) {
             return new FortranLabelDoStmtImpl(node);

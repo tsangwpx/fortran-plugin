@@ -3,16 +3,22 @@ package org.jetbrains.fortran.lang.psi.impl;
 import java.util.List;
 
 import com.intellij.psi.PsiElement;
+import com.intellij.psi.stubs.IStubElementType;
 import org.jetbrains.annotations.*;
 import com.intellij.lang.ASTNode;
 import com.intellij.psi.PsiElementVisitor;
 import com.intellij.psi.util.PsiTreeUtil;
+import org.jetbrains.fortran.lang.core.stubs.FortranExecutableConstructStub;
 import org.jetbrains.fortran.lang.psi.*;
 
 public class FortranLabeledDoConstructImpl extends FortranExecutableConstructImpl implements FortranLabeledDoConstruct {
 
     public FortranLabeledDoConstructImpl(ASTNode node) {
         super(node);
+    }
+
+    public FortranLabeledDoConstructImpl(FortranExecutableConstructStub stub, IStubElementType stubType) {
+        super(stub, stubType);
     }
 
     public void accept(@NotNull PsiElementVisitor visitor) {

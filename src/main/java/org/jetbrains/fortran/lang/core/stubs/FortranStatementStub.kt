@@ -6,9 +6,6 @@ import org.jetbrains.fortran.lang.psi.FortranStmt
 class FortranStatementStub (
         parent: StubElement<*>?, elementType: IStubElementType<*, *>
 ): StubBase<FortranStmt>(parent, elementType) {
-    init {
-        System.out.println("Stub for a statement")
-    }
 
     class Type<PsiT : FortranStmt>(
             debugName: String,

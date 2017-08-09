@@ -6,9 +6,6 @@ import org.jetbrains.fortran.lang.psi.FortranProgramUnit
 class FortranProgramUnitStub(
         parent: StubElement<*>?, elementType: IStubElementType<*, *>
 ): StubBase<FortranProgramUnit>(parent, elementType) {
-    init {
-        System.out.println("Stub for a program unit")
-    }
 
     class Type<PsiT : FortranProgramUnit>(
             debugName: String,

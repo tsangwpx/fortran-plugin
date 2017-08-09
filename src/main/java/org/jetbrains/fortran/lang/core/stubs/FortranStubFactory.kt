@@ -5,13 +5,32 @@ import org.jetbrains.fortran.lang.psi.impl.*
 fun fortranStubFactory(name: String): FortranStubElementType<*, *> = when (name) {
         // program units
         "MAIN_PROGRAM" -> FortranProgramUnitStub.Type("MAIN PROGRAM", ::FortranMainProgramImpl)
-        "FUNCTION_SUBPROGRAM" -> FortranProgramUnitStub.Type("FUNCTION", ::FortranModuleImpl)
-        "SUBROUTINE_SUBPROGRAM" -> FortranProgramUnitStub.Type("SUBROUTINE", ::FortranModuleImpl)
+        "FUNCTION_SUBPROGRAM" -> FortranProgramUnitStub.Type("FUNCTION_SUBPROGRAM", ::FortranFunctionSubprogramImpl)
+        "SUBROUTINE_SUBPROGRAM" -> FortranProgramUnitStub.Type("SUBROUTINE_SUBPROGRAM", ::FortranSubroutineSubprogramImpl)
         "MODULE" -> FortranProgramUnitStub.Type("MODULE", ::FortranModuleImpl)
-        "SUBMODULE" -> FortranProgramUnitStub.Type("SUBMODULE", ::FortranModuleImpl)
-        "BLOCK_DATA" -> FortranProgramUnitStub.Type("BLOCK DATA", ::FortranModuleImpl)
-        "SEPARATE_MODULE_SUBPROGRAM" -> FortranProgramUnitStub.Type("SEPARATE_MODULE_SUBPROGRAM", ::FortranModuleImpl)
-        "PROGRAM_UNIT" -> FortranProgramUnitStub.Type("UNKNOWN PROGRAM UNIT", ::FortranProgramUnitImpl)
+        "SUBMODULE" -> FortranProgramUnitStub.Type("SUBMODULE", ::FortranSubmoduleImpl)
+        "BLOCK_DATA" -> FortranProgramUnitStub.Type("BLOCK_DATA", ::FortranBlockDataImpl)
+        "SEPARATE_MODULE_SUBPROGRAM" -> FortranProgramUnitStub.Type("SEPARATE_MODULE_SUBPROGRAM", ::FortranSeparateModuleSubprogramImpl)
+        "PROGRAM_UNIT" -> FortranProgramUnitStub.Type("UNKNOWN_PROGRAM_UNIT", ::FortranProgramUnitImpl)
+        // declaration constructs
+        "DERIVED_TYPE_DEF" -> FortranDeclarationConstructStub.Type("DERIVED_TYPE_DEF", ::FortranDerivedTypeDefImpl)
+        "ENUM_DEF" -> FortranDeclarationConstructStub.Type("ENUM_DEF", ::FortranEnumDefImpl)
+        "INTERFACE_BLOCK" -> FortranDeclarationConstructStub.Type("INTERFACE_BLOCK", ::FortranInterfaceBlockImpl)
+        "DECLARATION_CONSTRUCT" -> FortranDeclarationConstructStub.Type("DECLARATION_CONSTRUCT", ::FortranDeclarationConstructImpl)
+
+        // executable constructs
+        "ASSOCIATE_CONSTRUCT" -> FortranExecutableConstructStub.Type("ASSOCIATE_CONSTRUCT", ::FortranAssociateConstructImpl)
+        "BLOCK_CONSTRUCT" -> FortranExecutableConstructStub.Type("BLOCK_CONSTRUCT", ::FortranBlockConstructImpl)
+        "CASE_CONSTRUCT" -> FortranExecutableConstructStub.Type("CASE_CONSTRUCT", ::FortranCaseConstructImpl)
+        "CRITICAL_CONSTRUCT" -> FortranExecutableConstructStub.Type("CRITICAL_CONSTRUCT", ::FortranCriticalConstructImpl)
+        "NONLABEL_DO_CONSTRUCT" -> FortranExecutableConstructStub.Type("NONLABEL_DO_CONSTRUCT", ::FortranNonlabelDoConstructImpl)
+        "LABELED_DO_CONSTRUCT" -> FortranExecutableConstructStub.Type("LABELED_DO_CONSTRUCT", ::FortranLabeledDoConstructImpl)
+        "FORALL_CONSTRUCT" -> FortranExecutableConstructStub.Type("FORALL_CONSTRUCT", ::FortranForallConstructImpl)
+        "IF_CONSTRUCT" -> FortranExecutableConstructStub.Type("IF_CONSTRUCT", ::FortranIfConstructImpl)
+        "SELECT_TYPE_CONSTRUCT" -> FortranExecutableConstructStub.Type("SELECT_TYPE_CONSTRUCT", ::FortranSelectTypeConstructImpl)
+        "WHERE_CONSTRUCT" -> FortranExecutableConstructStub.Type("WHERE_CONSTRUCT", ::FortranWhereConstructImpl)
+        "EXECUTABLE_CONSTRUCT" -> FortranExecutableConstructStub.Type("EXECUTABLE_CONSTRUCT", ::FortranExecutableConstructImpl)
+
         // stmts
         "DERIVED_TYPE_STMT" -> FortranStatementStub.Type("DERIVED_TYPE_STMT", ::FortranDerivedTypeStmtImpl)
         "END_TYPE_STMT" -> FortranStatementStub.Type("END_TYPE_STMT", ::FortranEndTypeStmtImpl)

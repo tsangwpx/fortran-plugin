@@ -8,9 +8,7 @@ import org.jetbrains.fortran.FortranLanguage
 import org.jetbrains.fortran.lang.psi.FortranFile
 
 class FortranFileStub(file: FortranFile?) : PsiFileStubImpl<FortranFile>(file) {
-    init{
-        System.out.println("Stub for a file")
-    }
+
     override fun getType() = Type
 
     object Type : IStubFileElementType<FortranFileStub>(FortranLanguage) {
