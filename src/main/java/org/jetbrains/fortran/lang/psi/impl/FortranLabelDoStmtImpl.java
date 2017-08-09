@@ -2,12 +2,11 @@ package org.jetbrains.fortran.lang.psi.impl;
 
 import com.intellij.lang.ASTNode;
 import com.intellij.psi.PsiElement;
+import com.intellij.psi.stubs.IStubElementType;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
-import org.jetbrains.fortran.lang.psi.FortranExpr;
-import org.jetbrains.fortran.lang.psi.FortranLabel;
-import org.jetbrains.fortran.lang.psi.FortranLabelDecl;
-import org.jetbrains.fortran.lang.psi.FortranLabelDoStmt;
+import org.jetbrains.fortran.lang.core.stubs.FortranStatementStub;
+import org.jetbrains.fortran.lang.psi.*;
 
 import static org.jetbrains.fortran.lang.FortranTypes.COLON;
 import static org.jetbrains.fortran.lang.FortranTypes.EOL;
@@ -16,6 +15,10 @@ public class FortranLabelDoStmtImpl extends FortranStmtImpl implements FortranLa
 
     public FortranLabelDoStmtImpl(ASTNode node) {
         super(node);
+    }
+
+    public FortranLabelDoStmtImpl(FortranStatementStub stub, IStubElementType stubType) {
+        super(stub, stubType);
     }
 
     @Override

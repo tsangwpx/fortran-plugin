@@ -6,6 +6,10 @@ import com.intellij.psi.tree.IElementType;
 import org.jetbrains.fortran.lang.FortranTypes;
 import org.jetbrains.fortran.lang.psi.impl.*;
 
+import static org.jetbrains.fortran.lang.psi.LabelDoStmt.LABEL_DO_STMT;
+
+//import static org.jetbrains.fortran.lang.parser.LabelDoStmtType.LABEL_DO_STMT;
+
 public class FortranManualPsiElementFactory {
     public static PsiElement createElement(ASTNode node) {
         IElementType type = node.getElementType();
@@ -15,7 +19,7 @@ public class FortranManualPsiElementFactory {
             return new FortranLabelDeclImpl(node);
         }else if (type == FortranTypes.LABELED_DO_CONSTRUCT) {
             return new FortranLabeledDoConstructImpl(node);
-        } else if (type == FortranTypes.LABEL_DO_STMT) {
+        } else if (type == LABEL_DO_STMT) {
             return new FortranLabelDoStmtImpl(node);
         }
 

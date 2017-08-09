@@ -13,6 +13,11 @@
   psiPackage='org.jetbrains.fortran.lang.psi'
   psiImplPackage='org.jetbrains.fortran.lang.psi.impl'
 
+  elementTypeFactory(".*stmt") ="org.jetbrains.fortran.lang.core.stubs.FortranStubFactoryKt.fortranStubFactory"
+  stubClass(".*stmt") = 'org.jetbrains.fortran.lang.core.stubs.FortranStatementStub'
+  extends(".*(expr|literal)")=expr
+  implements(".*stmt")='org.jetbrains.fortran.lang.psi.FortranStmt'
+  extends(".*stmt")='org.jetbrains.fortran.lang.psi.impl.FortranStmtImpl'
   generateTokenAccessors=true
   tokens=[
     EQ        = '='
@@ -58,14 +63,10 @@
 
     // for the external rule
     LABELED_DO_CONSTRUCT = 'LABELED_DO_CONSTRUCT'
-    LABEL_DO_STMT = 'LABEL_DO_STMT'
-    DO_TERM_ACTION_STMT = 'DO_TERM_ACTION_STMT'
+  //  LABEL_DO_STMT = 'LABEL_DO_STMT'
     IDENTIFIER = 'identifier'
   ]
 
-  extends(".*(expr|literal)")=expr
-  implements(".*stmt")='org.jetbrains.fortran.lang.psi.FortranStmt'
-  extends(".*stmt")='org.jetbrains.fortran.lang.psi.impl.FortranStmtImpl'
   consumeTokenMethod(".*_expr|expr")="consumeTokenFast"
 }
 
@@ -939,6 +940,8 @@ control_edit ::= ":" | (integerliteral? '/') | (signed_int_literal dataedit)
 // R1101
 main_program ::= (program_stmt_with_eol)? block internal_subprogram_part? end_program_stmt {
 pin = 1; extends = program_unit;
+  stubClass = 'org.jetbrains.fortran.lang.core.stubs.FortranProgramUnitStub'
+  elementTypeFactory ='org.jetbrains.fortran.lang.core.stubs.FortranStubFactoryKt.fortranStubFactory'
 }
 private program_stmt_with_eol ::= program_stmt eol+ {pin = 1}
 // R1102 +
@@ -946,7 +949,10 @@ program_stmt ::= label_decl? program_ fidentifier { pin = 2 }
 // R1103 +
 end_program_stmt ::=  label_decl? (endprogram_ fidentifier? | end_ (program_ fidentifier?)?) { pin = 2 }
 // R1104
-module ::= module_stmt eol+ block module_subprogram_part? end_module_stmt { pin = 1; extends = program_unit }
+module ::= module_stmt eol+ block module_subprogram_part? end_module_stmt { pin = 1; extends = program_unit
+  stubClass = 'org.jetbrains.fortran.lang.core.stubs.FortranProgramUnitStub'
+  elementTypeFactory ='org.jetbrains.fortran.lang.core.stubs.FortranStubFactoryKt.fortranStubFactory'
+}
 // R1105
 module_stmt ::= label_decl? module_ fidentifier { pin = 2 }
 // R1106
@@ -972,15 +978,26 @@ rename_stmt ::= (fidentifier '=>' fidentifier)
 only_stmt ::= rename_stmt | generic_spec | fidentifier
 // R1113, R1114, R1115 are trivial
 // R1116
-submodule ::= submodule_stmt eol+ block module_subprogram_part? end_submodule_stmt { pin = 1; extends = program_unit }
+submodule ::= submodule_stmt eol+ block module_subprogram_part? end_submodule_stmt { pin = 1; extends = program_unit
+  stubClass = 'org.jetbrains.fortran.lang.core.stubs.FortranProgramUnitStub'
+  elementTypeFactory ='org.jetbrains.fortran.lang.core.stubs.FortranStubFactoryKt.fortranStubFactory'
+}
 // R1117
-submodule_stmt ::= label_decl? submodule_ '(' parent_identifier ')' fidentifier { pin = 2 }
+submodule_stmt ::= label_decl? submodule_ '(' parent_identifier ')' fidentifier { pin = 2
+elementTypeFactory ="org.jetbrains.fortran.lang.core.stubs.FortranStubFactoryKt.fortranStubFactory"
+  stubClass = 'org.jetbrains.fortran.lang.core.stubs.FortranStatementStub'
+  mixin = 'org.jetbrains.fortran.lang.psi.ext.FortranStmtImplMixin'
+  }
 // R1118
 parent_identifier ::= fidentifier (':' fidentifier)?
 // R1119
 end_submodule_stmt ::= label_decl? (endsubmodule_ fidentifier? | end_ (submodule_ fidentifier?)?)  { pin = 2 }
 // R1120
-block_data ::= block_data_stmt eol+ block end_block_data_stmt { pin = 1; extends = program_unit }
+block_data ::= block_data_stmt eol+ block end_block_data_stmt {
+pin = 1; extends = program_unit;
+  stubClass = 'org.jetbrains.fortran.lang.core.stubs.FortranProgramUnitStub'
+  elementTypeFactory ='org.jetbrains.fortran.lang.core.stubs.FortranStubFactoryKt.fortranStubFactory'
+}
 // R1121
 block_data_stmt ::= label_decl? (blockdata_ | (block_ data_)) fidentifier? { pin = 2 }
 // R1122
@@ -1049,7 +1066,11 @@ prefix ::= prefix_spec+ { pin = 1 }
 // R1226
 prefix_spec ::= declaration_type_spec | elemental_ | impure_ | module_ | pure_ | recursive_
 // R1227
-function_subprogram ::= function_stmt eol+ block internal_subprogram_part? end_function_stmt { pin = 1; extends = program_unit }
+function_subprogram ::= function_stmt eol+ block internal_subprogram_part? end_function_stmt {
+pin = 1; extends = program_unit
+  stubClass = 'org.jetbrains.fortran.lang.core.stubs.FortranProgramUnitStub'
+  elementTypeFactory ='org.jetbrains.fortran.lang.core.stubs.FortranStubFactoryKt.fortranStubFactory'
+}
 // R1228
 function_stmt ::= label_decl? prefix? function_ fidentifier '(' <<list fidentifier>>? ')' suffix? { pin = 3 }
 // R1229 and R1230 are trivial
@@ -1058,7 +1079,11 @@ suffix ::= (language_binding_spec (result_ '(' fidentifier ')')?) | (result_ '('
 // R1232
 end_function_stmt ::= label_decl? ((end_ (function_ fidentifier?)?) | (endfunction_ fidentifier?)) { pin = 2 }
 // R1233
-subroutine_subprogram ::= subroutine_stmt eol+ block internal_subprogram_part? end_subroutine_stmt { pin = 1; extends = program_unit }
+subroutine_subprogram ::= subroutine_stmt eol+ block internal_subprogram_part? end_subroutine_stmt {
+pin = 1; extends = program_unit
+  stubClass = 'org.jetbrains.fortran.lang.core.stubs.FortranProgramUnitStub'
+  elementTypeFactory ='org.jetbrains.fortran.lang.core.stubs.FortranStubFactoryKt.fortranStubFactory'
+}
 // R1234
 subroutine_stmt ::= label_decl? prefix? subroutine_ fidentifier ('(' <<list dummy_arg>>? ')' language_binding_spec? )?  { pin = 3 }
 // R1235
@@ -1066,7 +1091,11 @@ dummy_arg ::= '*' | fidentifier
 // R1236
 end_subroutine_stmt ::= label_decl? ((end_ (subroutine_ fidentifier?)?) | (endsubroutine_ fidentifier?)) { pin = 2 }
 // R1237
-separate_module_subprogram ::= mp_subprogram_stmt eol+ block internal_subprogram_part? end_mp_subprogram_stmt { pin = 1; extends = program_unit }
+separate_module_subprogram ::= mp_subprogram_stmt eol+ block internal_subprogram_part? end_mp_subprogram_stmt {
+pin = 1; extends = program_unit
+  stubClass = 'org.jetbrains.fortran.lang.core.stubs.FortranProgramUnitStub'
+  elementTypeFactory ='org.jetbrains.fortran.lang.core.stubs.FortranStubFactoryKt.fortranStubFactory'
+}
 // R1238
 mp_subprogram_stmt ::= label_decl? module_ procedure_ fidentifier { pin = 3 }
 // R1239

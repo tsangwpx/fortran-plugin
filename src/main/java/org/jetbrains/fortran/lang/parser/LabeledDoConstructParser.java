@@ -10,6 +10,7 @@ import static org.jetbrains.fortran.lang.parser.FortranParser.*;
 import static org.jetbrains.fortran.lang.parser.FortranParserUtil.*;
 import static org.jetbrains.fortran.lang.psi.FortranTokenType.KEYWORD;
 import static org.jetbrains.fortran.lang.psi.FortranTokenType.WORD;
+import static org.jetbrains.fortran.lang.psi.LabelDoStmt.LABEL_DO_STMT;
 
 public class LabeledDoConstructParser implements GeneratedParserUtilBase.Parser {
 
