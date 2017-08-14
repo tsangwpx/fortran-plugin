@@ -12,6 +12,8 @@ fun fortranStubFactory(name: String): FortranStubElementType<*, *> = when (name)
         "BLOCK_DATA" -> FortranProgramUnitStub.Type("BLOCK_DATA", ::FortranBlockDataImpl)
         "SEPARATE_MODULE_SUBPROGRAM" -> FortranProgramUnitStub.Type("SEPARATE_MODULE_SUBPROGRAM", ::FortranSeparateModuleSubprogramImpl)
         "PROGRAM_UNIT" -> FortranProgramUnitStub.Type("UNKNOWN_PROGRAM_UNIT", ::FortranProgramUnitImpl)
+
+        "BLOCK" -> FortranBlockStub.Type
         // declaration constructs
         "DERIVED_TYPE_DEF" -> FortranDeclarationConstructStub.Type("DERIVED_TYPE_DEF", ::FortranDerivedTypeDefImpl)
         "ENUM_DEF" -> FortranDeclarationConstructStub.Type("ENUM_DEF", ::FortranEnumDefImpl)
