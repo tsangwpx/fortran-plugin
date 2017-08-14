@@ -1,14 +1,14 @@
 FILE
-  MODULE
-    MODULE_STMT
+  FortranModuleImpl(MODULE)
+    FortranModuleStmtImpl(MODULE_STMT)
       PsiElement(keyword)('module')
       PsiWhiteSpace(' ')
       PsiElement(identifier)('types')
     PsiElement(eol)('\n')
     PsiWhiteSpace('  ')
-    BLOCK
-      DERIVED_TYPE_DEF
-        DERIVED_TYPE_STMT
+    FortranBlockImpl(BLOCK)
+      FortranDerivedTypeDefImpl(DERIVED_TYPE_DEF)
+        FortranDerivedTypeStmtImpl(DERIVED_TYPE_STMT)
           PsiElement(keyword)('type')
           PsiWhiteSpace(' ')
           PsiElement(::)('::')
@@ -17,8 +17,8 @@ FILE
         PsiElement(eol)('\n')
         PsiWhiteSpace('    ')
         COMPONENT_PART
-          COMPONENT_DEF_STMT
-            DATA_COMPONENT_DEF_STMT
+          FortranComponentDefStmtImpl(COMPONENT_DEF_STMT)
+            FortranDataComponentDefStmtImpl(DATA_COMPONENT_DEF_STMT)
               INTRINSIC_TYPE_SPEC
                 PsiElement(keyword)('character')
                 CHAR_SELECTOR
@@ -36,8 +36,8 @@ FILE
                 PsiElement(identifier)('forename')
           PsiElement(eol)('\n')
           PsiWhiteSpace('    ')
-          COMPONENT_DEF_STMT
-            DATA_COMPONENT_DEF_STMT
+          FortranComponentDefStmtImpl(COMPONENT_DEF_STMT)
+            FortranDataComponentDefStmtImpl(DATA_COMPONENT_DEF_STMT)
               INTRINSIC_TYPE_SPEC
                 PsiElement(keyword)('integer')
               PsiWhiteSpace(' ')
@@ -47,7 +47,7 @@ FILE
                 PsiElement(identifier)('age')
           PsiElement(eol)('\n')
         PsiWhiteSpace('  ')
-        END_TYPE_STMT
+        FortranEndTypeStmtImpl(END_TYPE_STMT)
           PsiElement(keyword)('end')
           PsiWhiteSpace(' ')
           PsiElement(keyword)('type')
@@ -56,8 +56,8 @@ FILE
       PsiElement(eol)('\n')
       PsiWhiteSpace('\n')
       PsiWhiteSpace('  ')
-      DERIVED_TYPE_DEF
-        DERIVED_TYPE_STMT
+      FortranDerivedTypeDefImpl(DERIVED_TYPE_DEF)
+        FortranDerivedTypeStmtImpl(DERIVED_TYPE_STMT)
           PsiElement(keyword)('type')
           PsiWhiteSpace(' ')
           PsiElement(::)('::')
@@ -66,8 +66,8 @@ FILE
         PsiElement(eol)('\n')
         PsiWhiteSpace('    ')
         COMPONENT_PART
-          COMPONENT_DEF_STMT
-            DATA_COMPONENT_DEF_STMT
+          FortranComponentDefStmtImpl(COMPONENT_DEF_STMT)
+            FortranDataComponentDefStmtImpl(DATA_COMPONENT_DEF_STMT)
               PsiElement(keyword)('type')
               PsiElement(()('(')
               DERIVED_TYPE_SPEC
@@ -80,8 +80,8 @@ FILE
                 PsiElement(identifier)('oldest_child')
           PsiElement(eol)('\n')
           PsiWhiteSpace('    ')
-          COMPONENT_DEF_STMT
-            DATA_COMPONENT_DEF_STMT
+          FortranComponentDefStmtImpl(COMPONENT_DEF_STMT)
+            FortranDataComponentDefStmtImpl(DATA_COMPONENT_DEF_STMT)
               PsiElement(keyword)('type')
               PsiElement(()('(')
               DERIVED_TYPE_SPEC
@@ -106,7 +106,7 @@ FILE
                 PsiElement(identifier)('other_kids')
           PsiElement(eol)('\n')
         PsiWhiteSpace('  ')
-        END_TYPE_STMT
+        FortranEndTypeStmtImpl(END_TYPE_STMT)
           PsiElement(keyword)('end')
           PsiWhiteSpace(' ')
           PsiElement(keyword)('type')
@@ -115,8 +115,8 @@ FILE
       PsiElement(eol)('\n')
       PsiWhiteSpace('\n')
       PsiWhiteSpace('  ')
-      DERIVED_TYPE_DEF
-        DERIVED_TYPE_STMT
+      FortranDerivedTypeDefImpl(DERIVED_TYPE_DEF)
+        FortranDerivedTypeStmtImpl(DERIVED_TYPE_STMT)
           PsiElement(keyword)('TYPE')
           PsiElement(,)(',')
           PsiWhiteSpace(' ')
@@ -129,8 +129,8 @@ FILE
         PsiElement(eol)('\n')
         PsiWhiteSpace('    ')
         COMPONENT_PART
-          COMPONENT_DEF_STMT
-            DATA_COMPONENT_DEF_STMT
+          FortranComponentDefStmtImpl(COMPONENT_DEF_STMT)
+            FortranDataComponentDefStmtImpl(DATA_COMPONENT_DEF_STMT)
               INTRINSIC_TYPE_SPEC
                 PsiElement(keyword)('LOGICAL')
               PsiWhiteSpace(' ')
@@ -140,8 +140,8 @@ FILE
                 PsiElement(identifier)('DIAGNOSTIC')
           PsiElement(eol)('\n')
           PsiWhiteSpace('    ')
-          COMPONENT_DEF_STMT
-            DATA_COMPONENT_DEF_STMT
+          FortranComponentDefStmtImpl(COMPONENT_DEF_STMT)
+            FortranDataComponentDefStmtImpl(DATA_COMPONENT_DEF_STMT)
               INTRINSIC_TYPE_SPEC
                 PsiElement(keyword)('CHARACTER')
                 PsiWhiteSpace(' ')
@@ -162,7 +162,7 @@ FILE
                 PsiElement(identifier)('MESSAGE')
           PsiElement(eol)('\n')
         PsiWhiteSpace('  ')
-        END_TYPE_STMT
+        FortranEndTypeStmtImpl(END_TYPE_STMT)
           PsiElement(keyword)('END')
           PsiWhiteSpace(' ')
           PsiElement(keyword)('TYPE')
@@ -171,8 +171,8 @@ FILE
       PsiElement(eol)('\n')
       PsiWhiteSpace('\n')
       PsiWhiteSpace('  ')
-      DERIVED_TYPE_DEF
-        DERIVED_TYPE_STMT
+      FortranDerivedTypeDefImpl(DERIVED_TYPE_DEF)
+        FortranDerivedTypeStmtImpl(DERIVED_TYPE_STMT)
           PsiElement(keyword)('TYPE')
           PsiWhiteSpace(' ')
           PsiElement(identifier)('NUMERIC_SEQ')
@@ -182,8 +182,8 @@ FILE
         PsiElement(eol)('\n')
         PsiWhiteSpace('    ')
         COMPONENT_PART
-          COMPONENT_DEF_STMT
-            DATA_COMPONENT_DEF_STMT
+          FortranComponentDefStmtImpl(COMPONENT_DEF_STMT)
+            FortranDataComponentDefStmtImpl(DATA_COMPONENT_DEF_STMT)
               INTRINSIC_TYPE_SPEC
                 PsiElement(keyword)('INTEGER')
               PsiWhiteSpace(' ')
@@ -193,8 +193,8 @@ FILE
                 PsiElement(identifier)('INT_VAL')
           PsiElement(eol)('\n')
           PsiWhiteSpace('    ')
-          COMPONENT_DEF_STMT
-            DATA_COMPONENT_DEF_STMT
+          FortranComponentDefStmtImpl(COMPONENT_DEF_STMT)
+            FortranDataComponentDefStmtImpl(DATA_COMPONENT_DEF_STMT)
               INTRINSIC_TYPE_SPEC
                 PsiElement(keyword)('REAL')
               PsiWhiteSpace(' ')
@@ -204,8 +204,8 @@ FILE
                 PsiElement(identifier)('REAL_VAL')
           PsiElement(eol)('\n')
           PsiWhiteSpace('    ')
-          COMPONENT_DEF_STMT
-            DATA_COMPONENT_DEF_STMT
+          FortranComponentDefStmtImpl(COMPONENT_DEF_STMT)
+            FortranDataComponentDefStmtImpl(DATA_COMPONENT_DEF_STMT)
               INTRINSIC_TYPE_SPEC
                 PsiElement(keyword)('LOGICAL')
               PsiWhiteSpace(' ')
@@ -215,7 +215,7 @@ FILE
                 PsiElement(identifier)('LOG_VAL')
           PsiElement(eol)('\n')
         PsiWhiteSpace('  ')
-        END_TYPE_STMT
+        FortranEndTypeStmtImpl(END_TYPE_STMT)
           PsiElement(keyword)('END')
           PsiWhiteSpace(' ')
           PsiElement(keyword)('TYPE')
@@ -224,16 +224,16 @@ FILE
       PsiElement(eol)('\n')
       PsiWhiteSpace('\n')
       PsiWhiteSpace('  ')
-      DERIVED_TYPE_DEF
-        DERIVED_TYPE_STMT
+      FortranDerivedTypeDefImpl(DERIVED_TYPE_DEF)
+        FortranDerivedTypeStmtImpl(DERIVED_TYPE_STMT)
           PsiElement(keyword)('TYPE')
           PsiWhiteSpace(' ')
           PsiElement(identifier)('POINT')
         PsiElement(eol)('\n')
         PsiWhiteSpace('      ')
         COMPONENT_PART
-          COMPONENT_DEF_STMT
-            DATA_COMPONENT_DEF_STMT
+          FortranComponentDefStmtImpl(COMPONENT_DEF_STMT)
+            FortranDataComponentDefStmtImpl(DATA_COMPONENT_DEF_STMT)
               INTRINSIC_TYPE_SPEC
                 PsiElement(keyword)('REAL')
               PsiWhiteSpace(' ')
@@ -248,11 +248,11 @@ FILE
           PsiElement(eol)('\n')
         PsiWhiteSpace('    ')
         TYPE_BOUND_PROCEDURE_PART
-          CONTAINS_STMT
+          FortranContainsStmtImpl(CONTAINS_STMT)
             PsiElement(keyword)('CONTAINS')
           PsiElement(eol)('\n')
           PsiWhiteSpace('      ')
-          TYPE_BOUND_PROCEDURE_STMT
+          FortranTypeBoundProcedureStmtImpl(TYPE_BOUND_PROCEDURE_STMT)
             PsiElement(keyword)('PROCEDURE')
             PsiElement(,)(',')
             PsiWhiteSpace(' ')
@@ -269,12 +269,12 @@ FILE
               PsiElement(identifier)('POINT_LENGTH')
           PsiElement(eol)('\n')
         PsiWhiteSpace('  ')
-        END_TYPE_STMT
+        FortranEndTypeStmtImpl(END_TYPE_STMT)
           PsiElement(keyword)('END')
           PsiWhiteSpace(' ')
           PsiElement(keyword)('TYPE')
           PsiWhiteSpace(' ')
           PsiElement(identifier)('POINT')
       PsiElement(eol)('\n')
-    END_MODULE_STMT
+    FortranEndModuleStmtImpl(END_MODULE_STMT)
       PsiElement(keyword)('endmodule')

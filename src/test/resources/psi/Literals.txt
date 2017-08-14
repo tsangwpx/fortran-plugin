@@ -1,14 +1,14 @@
 FILE
-  MAIN_PROGRAM
-    PROGRAM_STMT
+  FortranMainProgramImpl(MAIN PROGRAM)
+    FortranProgramStmtImpl(PROGRAM_STMT)
       PsiElement(keyword)('program')
       PsiWhiteSpace(' ')
       PsiElement(identifier)('literals')
     PsiElement(eol)('\n')
     PsiWhiteSpace('  ')
-    BLOCK
-      ENUM_DEF
-        ENUM_DEF_STMT
+    FortranBlockImpl(BLOCK)
+      FortranEnumDefImpl(ENUM_DEF)
+        FortranEnumDefStmtImpl(ENUM_DEF_STMT)
           PsiElement(keyword)('ENUM')
           PsiElement(,)(',')
           PsiWhiteSpace(' ')
@@ -18,7 +18,7 @@ FILE
           PsiElement())(')')
         PsiElement(eol)('\n')
         PsiWhiteSpace('    ')
-        ENUMERATOR_DEF_STMT
+        FortranEnumeratorDefStmtImpl(ENUMERATOR_DEF_STMT)
           PsiElement(keyword)('ENUMERATOR')
           PsiWhiteSpace(' ')
           PsiElement(::)('::')
@@ -41,21 +41,21 @@ FILE
               PsiElement(integerliteral)('9')
         PsiElement(eol)('\n')
         PsiWhiteSpace('    ')
-        ENUMERATOR_DEF_STMT
+        FortranEnumeratorDefStmtImpl(ENUMERATOR_DEF_STMT)
           PsiElement(keyword)('ENUMERATOR')
           PsiWhiteSpace(' ')
           ENUMERATOR
             PsiElement(identifier)('YELLOW')
         PsiElement(eol)('\n')
         PsiWhiteSpace('  ')
-        END_ENUM_STMT
+        FortranEndEnumStmtImpl(END_ENUM_STMT)
           PsiElement(keyword)('END')
           PsiWhiteSpace(' ')
           PsiElement(keyword)('ENUM')
       PsiElement(eol)('\n')
       PsiWhiteSpace('\n')
       PsiWhiteSpace('  ')
-      ASSIGNMENT_STMT
+      FortranAssignmentStmtImpl(ASSIGNMENT_STMT)
         DESIGNATOR
           DATA_PATH
             DATA_REFERENCE_ELEMENT
@@ -67,7 +67,7 @@ FILE
           PsiElement(integerliteral)('1')
       PsiElement(eol)('\n')
       PsiWhiteSpace('  ')
-      ASSIGNMENT_STMT
+      FortranAssignmentStmtImpl(ASSIGNMENT_STMT)
         DESIGNATOR
           DATA_PATH
             DATA_REFERENCE_ELEMENT
@@ -79,7 +79,7 @@ FILE
           PsiElement(integerliteral)('1_8')
       PsiElement(eol)('\n')
       PsiWhiteSpace('  ')
-      ASSIGNMENT_STMT
+      FortranAssignmentStmtImpl(ASSIGNMENT_STMT)
         DESIGNATOR
           DATA_PATH
             DATA_REFERENCE_ELEMENT
@@ -91,7 +91,7 @@ FILE
           PsiElement(floatingpointliteral)('1.1')
       PsiElement(eol)('\n')
       PsiWhiteSpace('  ')
-      ASSIGNMENT_STMT
+      FortranAssignmentStmtImpl(ASSIGNMENT_STMT)
         DESIGNATOR
           DATA_PATH
             DATA_REFERENCE_ELEMENT
@@ -103,7 +103,7 @@ FILE
           PsiElement(floatingpointliteral)('1.1_4')
       PsiElement(eol)('\n')
       PsiWhiteSpace('  ')
-      ASSIGNMENT_STMT
+      FortranAssignmentStmtImpl(ASSIGNMENT_STMT)
         DESIGNATOR
           DATA_PATH
             DATA_REFERENCE_ELEMENT
@@ -119,7 +119,7 @@ FILE
             PsiElement(floatingpointliteral)('2e+4_8')
       PsiElement(eol)('\n')
       PsiWhiteSpace('  ')
-      ASSIGNMENT_STMT
+      FortranAssignmentStmtImpl(ASSIGNMENT_STMT)
         DESIGNATOR
           DATA_PATH
             DATA_REFERENCE_ELEMENT
@@ -135,7 +135,7 @@ FILE
           PsiElement(stringend)('rules!"')
       PsiElement(eol)('\n')
       PsiWhiteSpace('  ')
-      ASSIGNMENT_STMT
+      FortranAssignmentStmtImpl(ASSIGNMENT_STMT)
         DESIGNATOR
           DATA_PATH
             DATA_REFERENCE_ELEMENT
@@ -156,7 +156,7 @@ FILE
           PsiElement(stringend)('string\'')
       PsiElement(eol)('\n')
       PsiWhiteSpace('  ')
-      ASSIGNMENT_STMT
+      FortranAssignmentStmtImpl(ASSIGNMENT_STMT)
         DESIGNATOR
           DATA_PATH
             DATA_REFERENCE_ELEMENT
@@ -168,7 +168,7 @@ FILE
           PsiElement(binaryliteral)('B"101"')
       PsiElement(eol)('\n')
       PsiWhiteSpace('  ')
-      ASSIGNMENT_STMT
+      FortranAssignmentStmtImpl(ASSIGNMENT_STMT)
         DESIGNATOR
           DATA_PATH
             DATA_REFERENCE_ELEMENT
@@ -180,7 +180,7 @@ FILE
           PsiElement(octalliteral)('O"1765"')
       PsiElement(eol)('\n')
       PsiWhiteSpace('  ')
-      ASSIGNMENT_STMT
+      FortranAssignmentStmtImpl(ASSIGNMENT_STMT)
         DESIGNATOR
           DATA_PATH
             DATA_REFERENCE_ELEMENT
@@ -192,7 +192,7 @@ FILE
           PsiElement(hexliteral)('Z'9A7f'')
       PsiElement(eol)('\n')
       PsiWhiteSpace('  ')
-      ASSIGNMENT_STMT
+      FortranAssignmentStmtImpl(ASSIGNMENT_STMT)
         DESIGNATOR
           DATA_PATH
             DATA_REFERENCE_ELEMENT
@@ -204,7 +204,7 @@ FILE
           PsiElement(truekwd)('.TRUE._1')
       PsiElement(eol)('\n')
       PsiWhiteSpace('  ')
-      ASSIGNMENT_STMT
+      FortranAssignmentStmtImpl(ASSIGNMENT_STMT)
         DESIGNATOR
           DATA_PATH
             DATA_REFERENCE_ELEMENT
@@ -225,7 +225,7 @@ FILE
           PsiElement())(')')
       PsiElement(eol)('\n')
       PsiWhiteSpace('  ')
-      ASSIGNMENT_STMT
+      FortranAssignmentStmtImpl(ASSIGNMENT_STMT)
         DESIGNATOR
           DATA_PATH
             DATA_REFERENCE_ELEMENT
@@ -259,7 +259,7 @@ FILE
           PsiElement(/))('/)')
       PsiElement(eol)('\n')
       PsiWhiteSpace('  ')
-      ASSIGNMENT_STMT
+      FortranAssignmentStmtImpl(ASSIGNMENT_STMT)
         DESIGNATOR
           DATA_PATH
             DATA_REFERENCE_ELEMENT
@@ -287,5 +287,5 @@ FILE
           PsiWhiteSpace(' ')
           PsiElement(])(']')
       PsiElement(eol)('\n')
-    END_PROGRAM_STMT
+    FortranEndProgramStmtImpl(END_PROGRAM_STMT)
       PsiElement(keyword)('endprogram')

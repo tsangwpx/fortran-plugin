@@ -1,7 +1,7 @@
 FILE
-  MAIN_PROGRAM
-    BLOCK
-      FORMAT_STMT
+  FortranMainProgramImpl(MAIN PROGRAM)
+    FortranBlockImpl(BLOCK)
+      FortranFormatStmtImpl(FORMAT_STMT)
         LABEL_DECL
           PsiElement(integerliteral)('1')
         PsiWhiteSpace(' ')
@@ -17,7 +17,7 @@ FILE
         PsiElement(dataedit)('I10')
         PsiElement())(')')
       PsiElement(eol)('\n')
-      FORMAT_STMT
+      FortranFormatStmtImpl(FORMAT_STMT)
         LABEL_DECL
           PsiElement(integerliteral)('2')
         PsiWhiteSpace(' ')
@@ -48,5 +48,5 @@ FILE
         PsiElement())(')')
       PsiElement(eol)('\n')
     PsiWhiteSpace('\n')
-    END_PROGRAM_STMT
+    FortranEndProgramStmtImpl(END_PROGRAM_STMT)
       PsiElement(keyword)('end')

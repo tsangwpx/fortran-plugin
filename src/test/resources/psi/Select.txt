@@ -1,14 +1,14 @@
 FILE
-  MAIN_PROGRAM
-    PROGRAM_STMT
+  FortranMainProgramImpl(MAIN PROGRAM)
+    FortranProgramStmtImpl(PROGRAM_STMT)
       PsiElement(keyword)('program')
       PsiWhiteSpace(' ')
       PsiElement(identifier)('select_test')
     PsiElement(eol)('\n')
     PsiWhiteSpace('  ')
-    BLOCK
-      CASE_CONSTRUCT
-        SELECT_CASE_STMT
+    FortranBlockImpl(BLOCK)
+      FortranCaseConstructImpl(CASE_CONSTRUCT)
+        FortranSelectCaseStmtImpl(SELECT_CASE_STMT)
           PsiElement(keyword)('select')
           PsiWhiteSpace(' ')
           PsiElement(keyword)('case')
@@ -27,7 +27,7 @@ FILE
           PsiElement())(')')
         PsiElement(eol)('\n')
         PsiWhiteSpace('    ')
-        CASE_STMT
+        FortranCaseStmtImpl(CASE_STMT)
           PsiElement(keyword)('case')
           PsiWhiteSpace(' ')
           CASE_SELECTOR
@@ -42,8 +42,8 @@ FILE
             PsiElement())(')')
         PsiElement(eol)('\n')
         PsiWhiteSpace('       ')
-        BLOCK
-          ASSIGNMENT_STMT
+        FortranBlockImpl(BLOCK)
+          FortranAssignmentStmtImpl(ASSIGNMENT_STMT)
             DESIGNATOR
               DATA_PATH
                 DATA_REFERENCE_ELEMENT
@@ -53,7 +53,7 @@ FILE
               PsiElement(integerliteral)('1')
           PsiElement(eol)('\n')
         PsiWhiteSpace('    ')
-        CASE_STMT
+        FortranCaseStmtImpl(CASE_STMT)
           PsiElement(keyword)('case')
           PsiWhiteSpace(' ')
           CASE_SELECTOR
@@ -65,8 +65,8 @@ FILE
             PsiElement())(')')
         PsiElement(eol)('\n')
         PsiWhiteSpace('       ')
-        BLOCK
-          ASSIGNMENT_STMT
+        FortranBlockImpl(BLOCK)
+          FortranAssignmentStmtImpl(ASSIGNMENT_STMT)
             DESIGNATOR
               DATA_PATH
                 DATA_REFERENCE_ELEMENT
@@ -76,7 +76,7 @@ FILE
               PsiElement(integerliteral)('0')
           PsiElement(eol)('\n')
         PsiWhiteSpace('    ')
-        CASE_STMT
+        FortranCaseStmtImpl(CASE_STMT)
           PsiElement(keyword)('case')
           PsiWhiteSpace(' ')
           CASE_SELECTOR
@@ -90,8 +90,8 @@ FILE
             PsiElement())(')')
         PsiElement(eol)('\n')
         PsiWhiteSpace('       ')
-        BLOCK
-          ASSIGNMENT_STMT
+        FortranBlockImpl(BLOCK)
+          FortranAssignmentStmtImpl(ASSIGNMENT_STMT)
             DESIGNATOR
               DATA_PATH
                 DATA_REFERENCE_ELEMENT
@@ -101,7 +101,7 @@ FILE
               PsiElement(integerliteral)('2')
           PsiElement(eol)('\n')
         PsiWhiteSpace('    ')
-        CASE_STMT
+        FortranCaseStmtImpl(CASE_STMT)
           PsiElement(keyword)('case')
           PsiWhiteSpace(' ')
           CASE_SELECTOR
@@ -113,17 +113,17 @@ FILE
             PsiElement())(')')
         PsiElement(eol)('\n')
         PsiWhiteSpace('    ')
-        BLOCK
+        FortranBlockImpl(BLOCK)
           <empty list>
-        CASE_STMT
+        FortranCaseStmtImpl(CASE_STMT)
           PsiElement(keyword)('case')
           PsiWhiteSpace(' ')
           CASE_SELECTOR
             PsiElement(keyword)('default')
         PsiElement(eol)('\n')
         PsiWhiteSpace('       ')
-        BLOCK
-          ASSIGNMENT_STMT
+        FortranBlockImpl(BLOCK)
+          FortranAssignmentStmtImpl(ASSIGNMENT_STMT)
             DESIGNATOR
               DATA_PATH
                 DATA_REFERENCE_ELEMENT
@@ -133,10 +133,10 @@ FILE
               PsiElement(integerliteral)('4')
           PsiElement(eol)('\n')
         PsiWhiteSpace('  ')
-        END_SELECT_STMT
+        FortranEndSelectStmtImpl(END_SELECT_STMT)
           PsiElement(keyword)('endselect')
       PsiElement(eol)('\n')
-    END_PROGRAM_STMT
+    FortranEndProgramStmtImpl(END_PROGRAM_STMT)
       PsiElement(keyword)('end')
       PsiWhiteSpace(' ')
       PsiElement(keyword)('program')

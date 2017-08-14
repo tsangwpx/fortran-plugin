@@ -1,7 +1,7 @@
 FILE
-  MAIN_PROGRAM
-    BLOCK
-      LOCK_STMT
+  FortranMainProgramImpl(MAIN PROGRAM)
+    FortranBlockImpl(BLOCK)
+      FortranLockStmtImpl(LOCK_STMT)
         PsiElement(keyword)('lock')
         PsiElement(()('(')
         DESIGNATOR
@@ -22,7 +22,7 @@ FILE
                   PsiElement(identifier)('st')
         PsiElement())(')')
       PsiElement(eol)('\n')
-      SYNC_ALL_STMT
+      FortranSyncAllStmtImpl(SYNC_ALL_STMT)
         PsiElement(keyword)('sync')
         PsiWhiteSpace(' ')
         PsiElement(keyword)('all')
@@ -30,7 +30,7 @@ FILE
         PsiElement(()('(')
         PsiElement())(')')
       PsiElement(eol)('\n')
-      SYNC_IMAGES_STMT
+      FortranSyncImagesStmtImpl(SYNC_IMAGES_STMT)
         PsiElement(keyword)('syncimages')
         PsiWhiteSpace(' ')
         PsiElement(()('(')
@@ -38,7 +38,7 @@ FILE
           PsiElement(*)('*')
         PsiElement())(')')
       PsiElement(eol)('\n')
-      SYNC_MEMORY_STMT
+      FortranSyncMemoryStmtImpl(SYNC_MEMORY_STMT)
         PsiElement(keyword)('syncmemory')
         PsiWhiteSpace(' ')
         PsiElement(()('(')
@@ -53,16 +53,16 @@ FILE
                 PsiElement(identifier)('e')
         PsiElement())(')')
       PsiElement(eol)('\n')
-      EXIT_STMT
+      FortranExitStmtImpl(EXIT_STMT)
         PsiElement(keyword)('exit')
       PsiElement(eol)('\n')
-      GOTO_STMT
+      FortranGotoStmtImpl(GOTO_STMT)
         PsiElement(keyword)('goto')
         PsiWhiteSpace(' ')
         LABEL
           PsiElement(integerliteral)('123')
       PsiElement(eol)('\n')
-      COMPUTED_GOTO_STMT
+      FortranComputedGotoStmtImpl(COMPUTED_GOTO_STMT)
         PsiElement(keyword)('goto')
         PsiWhiteSpace(' ')
         PsiElement(()('(')
@@ -83,7 +83,7 @@ FILE
           CONSTANT
             PsiElement(integerliteral)('5')
       PsiElement(eol)('\n')
-      ARITHMETIC_IF_STMT
+      FortranArithmeticIfStmtImpl(ARITHMETIC_IF_STMT)
         PsiElement(keyword)('if')
         PsiWhiteSpace(' ')
         PsiElement(()('(')
@@ -108,7 +108,7 @@ FILE
         LABEL
           PsiElement(integerliteral)('3')
       PsiElement(eol)('\n')
-      STOP_STMT
+      FortranStopStmtImpl(STOP_STMT)
         PsiElement(keyword)('stop')
         PsiWhiteSpace(' ')
         ADD_EXPR
@@ -122,12 +122,12 @@ FILE
               DATA_REFERENCE_ELEMENT
                 PsiElement(identifier)('b')
       PsiElement(eol)('\n')
-      ERROR_STOP_STMT
+      FortranErrorStopStmtImpl(ERROR_STOP_STMT)
         PsiElement(keyword)('error')
         PsiWhiteSpace(' ')
         PsiElement(keyword)('stop')
       PsiElement(eol)('\n')
-      UNLOCK_STMT
+      FortranUnlockStmtImpl(UNLOCK_STMT)
         PsiElement(keyword)('unlock')
         PsiElement(()('(')
         DESIGNATOR
@@ -136,5 +136,5 @@ FILE
               PsiElement(identifier)('a')
         PsiElement())(')')
       PsiElement(eol)('\n')
-    END_PROGRAM_STMT
+    FortranEndProgramStmtImpl(END_PROGRAM_STMT)
       PsiElement(keyword)('endprogram')

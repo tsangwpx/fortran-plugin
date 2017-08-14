@@ -1,12 +1,12 @@
 FILE
-  MAIN_PROGRAM
-    BLOCK
-      IMPLICIT_STMT
+  FortranMainProgramImpl(MAIN PROGRAM)
+    FortranBlockImpl(BLOCK)
+      FortranImplicitStmtImpl(IMPLICIT_STMT)
         PsiElement(keyword)('implicit')
         PsiWhiteSpace(' ')
         PsiElement(keyword)('none')
       PsiElement(eol)('\n')
-      TYPE_DECLARATION_STMT
+      FortranTypeDeclarationStmtImpl(TYPE_DECLARATION_STMT)
         INTRINSIC_TYPE_SPEC
           PsiElement(keyword)('integer')
         PsiWhiteSpace(' ')
@@ -20,7 +20,7 @@ FILE
           CONSTANT
             PsiElement(integerliteral)('1')
       PsiElement(eol)('\n')
-      TYPE_DECLARATION_STMT
+      FortranTypeDeclarationStmtImpl(TYPE_DECLARATION_STMT)
         INTRINSIC_TYPE_SPEC
           PsiElement(keyword)('logical')
         PsiWhiteSpace(' ')
@@ -34,7 +34,7 @@ FILE
           LOGICAL_LITERAL
             PsiElement(truekwd)('.true.')
       PsiElement(eol)('\n')
-      TYPE_DECLARATION_STMT
+      FortranTypeDeclarationStmtImpl(TYPE_DECLARATION_STMT)
         INTRINSIC_TYPE_SPEC
           PsiElement(keyword)('integer')
         PsiWhiteSpace(' ')
@@ -57,7 +57,7 @@ FILE
           CONSTANT
             PsiElement(integerliteral)('2')
       PsiElement(eol)('\n')
-      IF_STMT
+      FortranIfStmtImpl(IF_STMT)
         PsiElement(keyword)('if')
         PsiWhiteSpace(' ')
         PsiElement(()('(')
@@ -67,7 +67,7 @@ FILE
               PsiElement(identifier)('if')
         PsiElement())(')')
         PsiWhiteSpace(' ')
-        WRITE_STMT
+        FortranWriteStmtImpl(WRITE_STMT)
           PsiElement(keyword)('write')
           PsiElement(()('(')
           PARAMETERS_SPEC
@@ -97,5 +97,5 @@ FILE
                 DATA_REFERENCE_ELEMENT
                   PsiElement(identifier)('write')
       PsiElement(eol)('\n')
-    END_PROGRAM_STMT
+    FortranEndProgramStmtImpl(END_PROGRAM_STMT)
       PsiElement(keyword)('end')

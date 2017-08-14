@@ -1,6 +1,6 @@
 FILE
-  MAIN_PROGRAM
-    PROGRAM_STMT
+  FortranMainProgramImpl(MAIN PROGRAM)
+    FortranProgramStmtImpl(PROGRAM_STMT)
       LABEL_DECL
         PsiElement(integerliteral)('1')
       PsiWhiteSpace(' ')
@@ -8,9 +8,9 @@ FILE
       PsiWhiteSpace(' ')
       PsiElement(identifier)('a')
     PsiElement(eol)('\n')
-    BLOCK
+    FortranBlockImpl(BLOCK)
       <empty list>
-    END_PROGRAM_STMT
+    FortranEndProgramStmtImpl(END_PROGRAM_STMT)
       PsiElement(keyword)('end')
       PsiWhiteSpace(' ')
       PsiElement(keyword)('program')

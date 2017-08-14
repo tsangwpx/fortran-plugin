@@ -1,6 +1,6 @@
 FILE
-  MAIN_PROGRAM
-    PROGRAM_STMT
+  FortranMainProgramImpl(MAIN PROGRAM)
+    FortranProgramStmtImpl(PROGRAM_STMT)
       PsiElement(keyword)('program')
       PsiWhiteSpace(' ')
       PsiElement(identifier)('a')
@@ -9,9 +9,9 @@ FILE
     PsiComment(comment)('! just a comment')
     PsiElement(eol)('\n')
     PsiWhiteSpace('  ')
-    BLOCK
-      BLOCK_CONSTRUCT
-        BLOCK_STMT
+    FortranBlockImpl(BLOCK)
+      FortranBlockConstructImpl(BLOCK_CONSTRUCT)
+        FortranBlockStmtImpl(BLOCK_STMT)
           CONSTRUCT_NAME_DECL
             PsiElement(identifier)('b1')
             PsiElement(:)(':')
@@ -19,8 +19,8 @@ FILE
           PsiElement(keyword)('block')
         PsiElement(eol)('\n')
         PsiWhiteSpace('     ')
-        BLOCK
-          TYPE_DECLARATION_STMT
+        FortranBlockImpl(BLOCK)
+          FortranTypeDeclarationStmtImpl(TYPE_DECLARATION_STMT)
             INTRINSIC_TYPE_SPEC
               PsiElement(keyword)('integer')
             PsiWhiteSpace(' ')
@@ -29,8 +29,8 @@ FILE
           PsiElement(eol)('\n')
           PsiWhiteSpace('\n')
           PsiWhiteSpace('     ')
-          CRITICAL_CONSTRUCT
-            CRITICAL_STMT
+          FortranCriticalConstructImpl(CRITICAL_CONSTRUCT)
+            FortranCriticalStmtImpl(CRITICAL_STMT)
               CONSTRUCT_NAME_DECL
                 PsiElement(identifier)('cr')
                 PsiElement(:)(':')
@@ -40,8 +40,8 @@ FILE
             PsiComment(comment)('!comment')
             PsiElement(eol)('\n')
             PsiWhiteSpace('        ')
-            BLOCK
-              ASSIGNMENT_STMT
+            FortranBlockImpl(BLOCK)
+              FortranAssignmentStmtImpl(ASSIGNMENT_STMT)
                 DESIGNATOR
                   DATA_PATH
                     DATA_REFERENCE_ELEMENT
@@ -53,20 +53,20 @@ FILE
                   PsiElement(integerliteral)('4')
               PsiElement(eol)('\n')
             PsiWhiteSpace('     ')
-            END_CRITICAL_STMT
+            FortranEndCriticalStmtImpl(END_CRITICAL_STMT)
               PsiElement(keyword)('endcritical')
               PsiWhiteSpace(' ')
               CONSTRUCT_NAME
                 PsiElement(identifier)('cr')
           PsiElement(eol)('\n')
         PsiWhiteSpace('  ')
-        END_BLOCK_STMT
+        FortranEndBlockStmtImpl(END_BLOCK_STMT)
           PsiElement(keyword)('endblock')
       PsiElement(eol)('\n')
       PsiWhiteSpace('\n')
       PsiWhiteSpace('  ')
-      BLOCK_CONSTRUCT
-        BLOCK_STMT
+      FortranBlockConstructImpl(BLOCK_CONSTRUCT)
+        FortranBlockStmtImpl(BLOCK_STMT)
           CONSTRUCT_NAME_DECL
             PsiElement(identifier)('b2')
             PsiElement(:)(':')
@@ -74,9 +74,9 @@ FILE
           PsiElement(keyword)('block')
         PsiElement(eol)('\n')
         PsiWhiteSpace('     ')
-        BLOCK
-          ASSOCIATE_CONSTRUCT
-            ASSOCIATE_STMT
+        FortranBlockImpl(BLOCK)
+          FortranAssociateConstructImpl(ASSOCIATE_CONSTRUCT)
+            FortranAssociateStmtImpl(ASSOCIATE_STMT)
               CONSTRUCT_NAME_DECL
                 PsiElement(identifier)('as')
                 PsiElement(:)(':')
@@ -105,8 +105,8 @@ FILE
                     PsiElement(integerliteral)('3')
             PsiElement(eol)('\n')
             PsiWhiteSpace('        ')
-            BLOCK
-              ASSIGNMENT_STMT
+            FortranBlockImpl(BLOCK)
+              FortranAssignmentStmtImpl(ASSIGNMENT_STMT)
                 DESIGNATOR
                   DATA_PATH
                     DATA_REFERENCE_ELEMENT
@@ -118,16 +118,16 @@ FILE
                   PsiElement(integerliteral)('3')
               PsiElement(eol)('\n')
             PsiWhiteSpace('     ')
-            END_ASSOCIATE_STMT
+            FortranEndAssociateStmtImpl(END_ASSOCIATE_STMT)
               PsiElement(keyword)('end')
               PsiWhiteSpace(' ')
               PsiElement(keyword)('associate')
           PsiElement(eol)('\n')
         PsiWhiteSpace('  ')
-        END_BLOCK_STMT
+        FortranEndBlockStmtImpl(END_BLOCK_STMT)
           PsiElement(keyword)('end')
           PsiWhiteSpace(' ')
           PsiElement(keyword)('block')
       PsiElement(eol)('\n')
-    END_PROGRAM_STMT
+    FortranEndProgramStmtImpl(END_PROGRAM_STMT)
       PsiElement(keyword)('endprogram')

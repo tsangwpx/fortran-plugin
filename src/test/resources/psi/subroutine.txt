@@ -1,6 +1,6 @@
 FILE
-  SUBROUTINE_SUBPROGRAM
-    SUBROUTINE_STMT
+  FortranSubroutineSubprogramImpl(SUBROUTINE_SUBPROGRAM)
+    FortranSubroutineStmtImpl(SUBROUTINE_STMT)
       PsiElement(keyword)('subroutine')
       PsiWhiteSpace(' ')
       PsiElement(identifier)('message_number_dp')
@@ -22,14 +22,14 @@ FILE
       PsiElement())(')')
     PsiElement(eol)('\n')
     PsiWhiteSpace('    ')
-    BLOCK
-      IMPLICIT_STMT
+    FortranBlockImpl(BLOCK)
+      FortranImplicitStmtImpl(IMPLICIT_STMT)
         PsiElement(keyword)('implicit')
         PsiWhiteSpace(' ')
         PsiElement(keyword)('none')
       PsiElement(eol)('\n')
       PsiWhiteSpace('    ')
-      TYPE_DECLARATION_STMT
+      FortranTypeDeclarationStmtImpl(TYPE_DECLARATION_STMT)
         INTRINSIC_TYPE_SPEC
           PsiElement(keyword)('integer')
         PsiElement(,)(',')
@@ -45,7 +45,7 @@ FILE
           PsiElement(identifier)('level')
       PsiElement(eol)('\n')
       PsiWhiteSpace('    ')
-      TYPE_DECLARATION_STMT
+      FortranTypeDeclarationStmtImpl(TYPE_DECLARATION_STMT)
         INTRINSIC_TYPE_SPEC
           PsiElement(keyword)('character')
           CHAR_SELECTOR
@@ -68,7 +68,7 @@ FILE
           PsiElement(identifier)('text')
       PsiElement(eol)('\n')
       PsiWhiteSpace('    ')
-      TYPE_DECLARATION_STMT
+      FortranTypeDeclarationStmtImpl(TYPE_DECLARATION_STMT)
         INTRINSIC_TYPE_SPEC
           PsiElement(keyword)('real')
           KIND_SELECTOR
@@ -91,7 +91,7 @@ FILE
           PsiElement(identifier)('number')
       PsiElement(eol)('\n')
       PsiWhiteSpace('    ')
-      TYPE_DECLARATION_STMT
+      FortranTypeDeclarationStmtImpl(TYPE_DECLARATION_STMT)
         INTRINSIC_TYPE_SPEC
           PsiElement(keyword)('character')
           CHAR_SELECTOR
@@ -117,7 +117,7 @@ FILE
           PsiElement(identifier)('units')
       PsiElement(eol)('\n')
       PsiWhiteSpace('    ')
-      TYPE_DECLARATION_STMT
+      FortranTypeDeclarationStmtImpl(TYPE_DECLARATION_STMT)
         INTRINSIC_TYPE_SPEC
           PsiElement(keyword)('character')
           CHAR_SELECTOR
@@ -135,7 +135,7 @@ FILE
           PsiElement(identifier)('char_number')
       PsiElement(eol)('\n')
       PsiWhiteSpace('    ')
-      WRITE_STMT
+      FortranWriteStmtImpl(WRITE_STMT)
         PsiElement(keyword)('write')
         PsiElement(()('(')
         PARAMETERS_SPEC
@@ -158,7 +158,7 @@ FILE
                 PsiElement(identifier)('number')
       PsiElement(eol)('\n')
       PsiWhiteSpace('    ')
-      IF_STMT
+      FortranIfStmtImpl(IF_STMT)
         PsiElement(keyword)('if')
         PsiElement(()('(')
         REL_EXPR
@@ -175,7 +175,7 @@ FILE
                 PsiElement(identifier)('verbose_level')
         PsiElement())(')')
         PsiWhiteSpace(' ')
-        WRITE_STMT
+        FortranWriteStmtImpl(WRITE_STMT)
           PsiElement(keyword)('write')
           PsiElement(()('(')
           PARAMETERS_SPEC
@@ -240,7 +240,7 @@ FILE
                     PsiElement())(')')
       PsiElement(eol)('\n')
     PsiWhiteSpace('  ')
-    END_SUBROUTINE_STMT
+    FortranEndSubroutineStmtImpl(END_SUBROUTINE_STMT)
       PsiElement(keyword)('end')
       PsiWhiteSpace(' ')
       PsiElement(keyword)('subroutine')

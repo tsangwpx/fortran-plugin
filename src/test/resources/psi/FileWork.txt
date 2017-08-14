@@ -1,13 +1,13 @@
 FILE
-  MAIN_PROGRAM
-    PROGRAM_STMT
+  FortranMainProgramImpl(MAIN PROGRAM)
+    FortranProgramStmtImpl(PROGRAM_STMT)
       PsiElement(keyword)('program')
       PsiWhiteSpace(' ')
       PsiElement(identifier)('filework')
     PsiElement(eol)('\n')
     PsiWhiteSpace('    ')
-    BLOCK
-      OPEN_STMT
+    FortranBlockImpl(BLOCK)
+      FortranOpenStmtImpl(OPEN_STMT)
         PsiElement(keyword)('open')
         PsiWhiteSpace(' ')
         PsiElement(()('(')
@@ -24,7 +24,7 @@ FILE
         PsiElement())(')')
       PsiElement(eol)('\n')
       PsiWhiteSpace('    ')
-      OPEN_STMT
+      FortranOpenStmtImpl(OPEN_STMT)
         PsiElement(keyword)('open')
         PsiWhiteSpace(' ')
         PsiElement(()('(')
@@ -52,7 +52,7 @@ FILE
         PsiElement())(')')
       PsiElement(eol)('\n')
       PsiWhiteSpace('    ')
-      WAIT_STMT
+      FortranWaitStmtImpl(WAIT_STMT)
         PsiElement(keyword)('wait')
         PsiWhiteSpace(' ')
         PsiElement(()('(')
@@ -121,14 +121,14 @@ FILE
         PsiElement())(')')
       PsiElement(eol)('\n')
       PsiWhiteSpace('    ')
-      BACKSPACE_STMT
+      FortranBackspaceStmtImpl(BACKSPACE_STMT)
         PsiElement(keyword)('backspace')
         PsiWhiteSpace(' ')
         CONSTANT
           PsiElement(integerliteral)('1')
       PsiElement(eol)('\n')
       PsiWhiteSpace('    ')
-      BACKSPACE_STMT
+      FortranBackspaceStmtImpl(BACKSPACE_STMT)
         PsiElement(keyword)('backspace')
         PsiWhiteSpace(' ')
         PsiElement(()('(')
@@ -147,14 +147,14 @@ FILE
         PsiElement())(')')
       PsiElement(eol)('\n')
       PsiWhiteSpace('    ')
-      ENDFILE_STMT
+      FortranEndfileStmtImpl(ENDFILE_STMT)
         PsiElement(keyword)('endfile')
         PsiWhiteSpace(' ')
         CONSTANT
           PsiElement(integerliteral)('1')
       PsiElement(eol)('\n')
       PsiWhiteSpace('    ')
-      ENDFILE_STMT
+      FortranEndfileStmtImpl(ENDFILE_STMT)
         PsiElement(keyword)('endfile')
         PsiWhiteSpace(' ')
         PsiElement(()('(')
@@ -175,21 +175,21 @@ FILE
         PsiElement())(')')
       PsiElement(eol)('\n')
       PsiWhiteSpace('    ')
-      REWIND_STMT
+      FortranRewindStmtImpl(REWIND_STMT)
         PsiElement(keyword)('rewind')
         PsiWhiteSpace(' ')
         CONSTANT
           PsiElement(integerliteral)('1')
       PsiElement(eol)('\n')
       PsiWhiteSpace('    ')
-      FLUSH_STMT
+      FortranFlushStmtImpl(FLUSH_STMT)
         PsiElement(keyword)('flush')
         PsiWhiteSpace(' ')
         CONSTANT
           PsiElement(integerliteral)('2')
       PsiElement(eol)('\n')
       PsiWhiteSpace('    ')
-      FLUSH_STMT
+      FortranFlushStmtImpl(FLUSH_STMT)
         PsiElement(keyword)('flush')
         PsiWhiteSpace(' ')
         PsiElement(()('(')
@@ -210,7 +210,7 @@ FILE
         PsiElement())(')')
       PsiElement(eol)('\n')
       PsiWhiteSpace('    ')
-      INQUIRE_STMT
+      FortranInquireStmtImpl(INQUIRE_STMT)
         PsiElement(keyword)('inquire')
         PsiWhiteSpace(' ')
         PsiElement(()('(')
@@ -231,7 +231,7 @@ FILE
               PsiElement(integerliteral)('2')
       PsiElement(eol)('\n')
       PsiWhiteSpace('    ')
-      INQUIRE_STMT
+      FortranInquireStmtImpl(INQUIRE_STMT)
         PsiElement(keyword)('inquire')
         PsiWhiteSpace(' ')
         PsiElement(()('(')
@@ -277,7 +277,7 @@ FILE
         PsiElement())(')')
       PsiElement(eol)('\n')
       PsiWhiteSpace('    ')
-      CLOSE_STMT
+      FortranCloseStmtImpl(CLOSE_STMT)
         PsiElement(keyword)('close')
         PsiWhiteSpace(' ')
         PsiElement(()('(')
@@ -307,7 +307,7 @@ FILE
         PsiElement())(')')
       PsiElement(eol)('\n')
       PsiWhiteSpace('    ')
-      CLOSE_STMT
+      FortranCloseStmtImpl(CLOSE_STMT)
         PsiElement(keyword)('close')
         PsiWhiteSpace(' ')
         PsiElement(()('(')
@@ -320,5 +320,5 @@ FILE
             PsiElement(integerliteral)('2')
         PsiElement())(')')
       PsiElement(eol)('\n')
-    END_PROGRAM_STMT
+    FortranEndProgramStmtImpl(END_PROGRAM_STMT)
       PsiElement(keyword)('end')

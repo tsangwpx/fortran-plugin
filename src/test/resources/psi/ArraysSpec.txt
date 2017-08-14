@@ -1,12 +1,12 @@
 FILE
-  MAIN_PROGRAM
-    PROGRAM_STMT
+  FortranMainProgramImpl(MAIN PROGRAM)
+    FortranProgramStmtImpl(PROGRAM_STMT)
       PsiElement(keyword)('program')
       PsiWhiteSpace(' ')
       PsiElement(identifier)('arraystest')
     PsiElement(eol)('\n')
-    BLOCK
-      TYPE_DECLARATION_STMT
+    FortranBlockImpl(BLOCK)
+      FortranTypeDeclarationStmtImpl(TYPE_DECLARATION_STMT)
         INTRINSIC_TYPE_SPEC
           PsiElement(keyword)('real')
           PsiWhiteSpace(' ')
@@ -37,7 +37,7 @@ FILE
         ENTITY_DECL
           PsiElement(identifier)('x')
       PsiElement(eol)('\n')
-      TYPE_DECLARATION_STMT
+      FortranTypeDeclarationStmtImpl(TYPE_DECLARATION_STMT)
         INTRINSIC_TYPE_SPEC
           PsiElement(keyword)('real')
           PsiWhiteSpace(' ')
@@ -64,7 +64,7 @@ FILE
         ENTITY_DECL
           PsiElement(identifier)('px')
       PsiElement(eol)('\n')
-      TYPE_DECLARATION_STMT
+      FortranTypeDeclarationStmtImpl(TYPE_DECLARATION_STMT)
         INTRINSIC_TYPE_SPEC
           PsiElement(keyword)('integer')
         PsiElement(,)(',')
@@ -94,7 +94,7 @@ FILE
         ENTITY_DECL
           PsiElement(identifier)('y')
       PsiElement(eol)('\n')
-      TYPE_DECLARATION_STMT
+      FortranTypeDeclarationStmtImpl(TYPE_DECLARATION_STMT)
         INTRINSIC_TYPE_SPEC
           PsiElement(keyword)('integer')
         PsiElement(,)(',')
@@ -131,7 +131,7 @@ FILE
         ENTITY_DECL
           PsiElement(identifier)('i')
       PsiElement(eol)('\n')
-    END_PROGRAM_STMT
+    FortranEndProgramStmtImpl(END_PROGRAM_STMT)
       PsiElement(keyword)('endprogram')
       PsiWhiteSpace(' ')
       PsiElement(identifier)('arraystest')

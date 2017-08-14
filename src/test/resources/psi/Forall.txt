@@ -1,8 +1,8 @@
 FILE
-  MAIN_PROGRAM
-    BLOCK
-      FORALL_CONSTRUCT
-        FORALL_CONSTRUCT_STMT
+  FortranMainProgramImpl(MAIN PROGRAM)
+    FortranBlockImpl(BLOCK)
+      FortranForallConstructImpl(FORALL_CONSTRUCT)
+        FortranForallConstructStmtImpl(FORALL_CONSTRUCT_STMT)
           PsiElement(keyword)('forall')
           PsiWhiteSpace(' ')
           FORALL_HEADER
@@ -21,8 +21,8 @@ FILE
             PsiElement())(')')
         PsiElement(eol)('\n')
         PsiWhiteSpace('   ')
-        BLOCK
-          FORALL_STMT
+        FortranBlockImpl(BLOCK)
+          FortranForallStmtImpl(FORALL_STMT)
             PsiElement(keyword)('forall')
             PsiWhiteSpace(' ')
             FORALL_HEADER
@@ -67,7 +67,7 @@ FILE
                       PsiElement(identifier)('i')
               PsiElement())(')')
             PsiWhiteSpace(' ')
-            ASSIGNMENT_STMT
+            FortranAssignmentStmtImpl(ASSIGNMENT_STMT)
               DESIGNATOR
                 DATA_PATH
                   DATA_REFERENCE_ELEMENT
@@ -79,8 +79,8 @@ FILE
                 PsiElement(integerliteral)('2')
           PsiElement(eol)('\n')
           PsiWhiteSpace(' ')
-          FORALL_CONSTRUCT
-            FORALL_CONSTRUCT_STMT
+          FortranForallConstructImpl(FORALL_CONSTRUCT)
+            FortranForallConstructStmtImpl(FORALL_CONSTRUCT_STMT)
               LABEL_DECL
                 PsiElement(integerliteral)('1')
               PsiWhiteSpace(' ')
@@ -102,8 +102,8 @@ FILE
                 PsiElement())(')')
             PsiElement(eol)('\n')
             PsiWhiteSpace(' ')
-            BLOCK
-              ASSIGNMENT_STMT
+            FortranBlockImpl(BLOCK)
+              FortranAssignmentStmtImpl(ASSIGNMENT_STMT)
                 LABEL_DECL
                   PsiElement(integerliteral)('2')
                 PsiWhiteSpace('    ')
@@ -116,14 +116,14 @@ FILE
                   PsiElement(integerliteral)('1')
               PsiElement(eol)('\n')
             PsiWhiteSpace(' ')
-            END_FORALL_STMT
+            FortranEndForallStmtImpl(END_FORALL_STMT)
               LABEL_DECL
                 PsiElement(integerliteral)('3')
               PsiWhiteSpace(' ')
               PsiElement(keyword)('endforall')
           PsiElement(eol)('\n')
           PsiWhiteSpace('   ')
-          WHERE_STMT
+          FortranWhereStmtImpl(WHERE_STMT)
             PsiElement(keyword)('where')
             PsiWhiteSpace(' ')
             PsiElement(()('(')
@@ -139,7 +139,7 @@ FILE
                 PsiElement(integerliteral)('0')
             PsiElement())(')')
             PsiWhiteSpace(' ')
-            ASSIGNMENT_STMT
+            FortranAssignmentStmtImpl(ASSIGNMENT_STMT)
               DESIGNATOR
                 DATA_PATH
                   DATA_REFERENCE_ELEMENT
@@ -151,8 +151,8 @@ FILE
                 PsiElement(integerliteral)('1')
           PsiElement(eol)('\n')
           PsiWhiteSpace('   ')
-          WHERE_CONSTRUCT
-            WHERE_CONSTRUCT_STMT
+          FortranWhereConstructImpl(WHERE_CONSTRUCT)
+            FortranWhereConstructStmtImpl(WHERE_CONSTRUCT_STMT)
               PsiElement(keyword)('where')
               PsiWhiteSpace(' ')
               PsiElement(()('(')
@@ -167,8 +167,8 @@ FILE
               PsiElement())(')')
             PsiElement(eol)('\n')
             PsiWhiteSpace('      ')
-            BLOCK
-              ASSIGNMENT_STMT
+            FortranBlockImpl(BLOCK)
+              FortranAssignmentStmtImpl(ASSIGNMENT_STMT)
                 DESIGNATOR
                   DATA_PATH
                     DATA_REFERENCE_ELEMENT
@@ -180,7 +180,7 @@ FILE
                   PsiElement(integerliteral)('4')
               PsiElement(eol)('\n')
             PsiWhiteSpace('   ')
-            MASKED_ELSEWHERE_STMT
+            FortranMaskedElsewhereStmtImpl(MASKED_ELSEWHERE_STMT)
               PsiElement(keyword)('elsewhere')
               PsiWhiteSpace(' ')
               PsiElement(()('(')
@@ -195,8 +195,8 @@ FILE
               PsiElement())(')')
             PsiElement(eol)('\n')
             PsiWhiteSpace('      ')
-            BLOCK
-              ASSIGNMENT_STMT
+            FortranBlockImpl(BLOCK)
+              FortranAssignmentStmtImpl(ASSIGNMENT_STMT)
                 DESIGNATOR
                   DATA_PATH
                     DATA_REFERENCE_ELEMENT
@@ -206,12 +206,12 @@ FILE
                   PsiElement(integerliteral)('5')
               PsiElement(eol)('\n')
             PsiWhiteSpace('   ')
-            ELSEWHERE_STMT
+            FortranElsewhereStmtImpl(ELSEWHERE_STMT)
               PsiElement(keyword)('elsewhere')
             PsiElement(eol)('\n')
             PsiWhiteSpace('      ')
-            BLOCK
-              ASSIGNMENT_STMT
+            FortranBlockImpl(BLOCK)
+              FortranAssignmentStmtImpl(ASSIGNMENT_STMT)
                 DESIGNATOR
                   DATA_PATH
                     DATA_REFERENCE_ELEMENT
@@ -221,11 +221,11 @@ FILE
                   PsiElement(integerliteral)('6')
               PsiElement(eol)('\n')
             PsiWhiteSpace('   ')
-            END_WHERE_STMT
+            FortranEndWhereStmtImpl(END_WHERE_STMT)
               PsiElement(keyword)('endwhere')
           PsiElement(eol)('\n')
-        END_FORALL_STMT
+        FortranEndForallStmtImpl(END_FORALL_STMT)
           PsiElement(keyword)('endforall')
       PsiElement(eol)('\n')
-    END_PROGRAM_STMT
+    FortranEndProgramStmtImpl(END_PROGRAM_STMT)
       PsiElement(keyword)('endprogram')

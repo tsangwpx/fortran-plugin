@@ -1,13 +1,13 @@
 FILE
-  MAIN_PROGRAM
-    PROGRAM_STMT
+  FortranMainProgramImpl(MAIN PROGRAM)
+    FortranProgramStmtImpl(PROGRAM_STMT)
       PsiElement(keyword)('program')
       PsiWhiteSpace(' ')
       PsiElement(identifier)('a')
     PsiElement(eol)('\n')
     PsiWhiteSpace('  ')
-    BLOCK
-      PRINT_STMT
+    FortranBlockImpl(BLOCK)
+      FortranPrintStmtImpl(PRINT_STMT)
         PsiElement(keyword)('Print')
         PsiWhiteSpace(' ')
         PsiElement(*)('*')
@@ -18,7 +18,7 @@ FILE
             PsiElement(stringliteral)('"Hello World!"')
       PsiElement(eol)('\n')
       PsiWhiteSpace('  ')
-      PRINT_STMT
+      FortranPrintStmtImpl(PRINT_STMT)
         PsiElement(keyword)('Print')
         PsiWhiteSpace(' ')
         PsiElement(*)('*')
@@ -31,7 +31,7 @@ FILE
                 PsiElement(identifier)('item1')
       PsiElement(eol)('\n')
       PsiWhiteSpace('  ')
-      PRINT_STMT
+      FortranPrintStmtImpl(PRINT_STMT)
         PsiElement(keyword)('Print')
         PsiWhiteSpace(' ')
         PsiElement(*)('*')
@@ -48,7 +48,7 @@ FILE
               PsiElement(integerliteral)('100')
       PsiElement(eol)('\n')
       PsiWhiteSpace('  ')
-      PRINT_STMT
+      FortranPrintStmtImpl(PRINT_STMT)
         PsiElement(keyword)('Print')
         PsiWhiteSpace(' ')
         PsiElement(*)('*')
@@ -75,7 +75,7 @@ FILE
                 PsiElement(identifier)('item3')
       PsiElement(eol)('\n')
       PsiWhiteSpace('  ')
-      FORMAT_STMT
+      FortranFormatStmtImpl(FORMAT_STMT)
         LABEL_DECL
           PsiElement(integerliteral)('130')
         PsiWhiteSpace(' ')
@@ -88,7 +88,7 @@ FILE
         PsiElement())(')')
       PsiElement(eol)('\n')
       PsiWhiteSpace('  ')
-      PRINT_STMT
+      FortranPrintStmtImpl(PRINT_STMT)
         PsiElement(keyword)('Print')
         PsiWhiteSpace(' ')
         PsiElement(*)('*')
@@ -125,7 +125,7 @@ FILE
             PsiElement(stringliteral)('"Hello World!"')
       PsiElement(eol)('\n')
       PsiWhiteSpace('  ')
-      PRINT_STMT
+      FortranPrintStmtImpl(PRINT_STMT)
         PsiElement(keyword)('print')
         PsiWhiteSpace(' ')
         CONSTANT
@@ -153,7 +153,7 @@ FILE
                 PsiElement(identifier)('vector')
       PsiElement(eol)('\n')
       PsiWhiteSpace('  ')
-      PRINT_STMT
+      FortranPrintStmtImpl(PRINT_STMT)
         PsiElement(keyword)('print')
         PsiWhiteSpace(' ')
         PsiElement(*)('*')
@@ -207,7 +207,7 @@ FILE
             PsiElement())(')')
       PsiElement(eol)('\n')
       PsiWhiteSpace('  ')
-      READ_STMT
+      FortranReadStmtImpl(READ_STMT)
         PsiElement(keyword)('read')
         PsiElement(()('(')
         PsiWhiteSpace(' ')
@@ -259,7 +259,7 @@ FILE
                 PsiElement(identifier)('y')
       PsiElement(eol)('\n')
       PsiWhiteSpace('  ')
-      READ_STMT
+      FortranReadStmtImpl(READ_STMT)
         PsiElement(keyword)('read')
         PsiElement(()('(')
         PARAMETERS_SPEC
@@ -283,7 +283,7 @@ FILE
                 PsiElement(identifier)('v')
       PsiElement(eol)('\n')
       PsiWhiteSpace('  ')
-      READ_STMT
+      FortranReadStmtImpl(READ_STMT)
         PsiElement(keyword)('read')
         PsiElement(*)('*')
         PsiElement(,)(',')
@@ -302,7 +302,7 @@ FILE
                 PsiElement(identifier)('v')
       PsiElement(eol)('\n')
       PsiWhiteSpace('  ')
-      READ_STMT
+      FortranReadStmtImpl(READ_STMT)
         PsiElement(keyword)('read')
         PsiElement(()('(')
         PsiWhiteSpace(' ')
@@ -323,7 +323,7 @@ FILE
                 PsiElement(identifier)('v')
       PsiElement(eol)('\n')
       PsiWhiteSpace('  ')
-      READ_STMT
+      FortranReadStmtImpl(READ_STMT)
         PsiElement(keyword)('read')
         PsiElement(()('(')
         PARAMETERS_SPEC
@@ -343,7 +343,7 @@ FILE
         PsiElement())(')')
       PsiElement(eol)('\n')
       PsiWhiteSpace('  ')
-      WRITE_STMT
+      FortranWriteStmtImpl(WRITE_STMT)
         PsiElement(keyword)('write')
         PsiElement(()('(')
         PsiWhiteSpace(' ')
@@ -388,7 +388,7 @@ FILE
                 PsiElement(identifier)('y')
       PsiElement(eol)('\n')
       PsiWhiteSpace('  ')
-      WRITE_STMT
+      FortranWriteStmtImpl(WRITE_STMT)
         PsiElement(keyword)('write')
         PsiElement(()('(')
         PsiWhiteSpace(' ')
@@ -415,7 +415,7 @@ FILE
                 PsiElement(identifier)('v')
       PsiElement(eol)('\n')
       PsiWhiteSpace('  ')
-      WRITE_STMT
+      FortranWriteStmtImpl(WRITE_STMT)
         PsiElement(keyword)('write')
         PsiElement(()('(')
         PsiWhiteSpace(' ')
@@ -436,7 +436,7 @@ FILE
         PsiWhiteSpace(' ')
         PsiElement())(')')
       PsiElement(eol)('\n')
-    END_PROGRAM_STMT
+    FortranEndProgramStmtImpl(END_PROGRAM_STMT)
       PsiElement(keyword)('end')
       PsiWhiteSpace(' ')
       PsiElement(keyword)('program')
